@@ -9,7 +9,7 @@ val IDENTITY_URL by TProperty.notNullable<String>()
 val ERM_SSR_FRONTEND_ARM_SELLER_URL by TProperty.notNullable { ServiceUrlBuilder.ERM_SSR_FRONTEND_ARM_SELLER.url }
 
 val ASTERISK_ARM_SELLER_URL by TProperty.notNullable { ServiceUrlBuilder.ASTERISK_ARM_SELLER.url }
-val CUSTOMERSERVICE_ARM_SELLER_URL by TProperty.notNullable { ServiceUrlBuilder.CUSTOMERSERVICE_ARM_SELLER.url }
+val CUSTOMER_SERVICE_ARM_SELLER_URL by TProperty.notNullable { ServiceUrlBuilder.CUSTOMERSERVICE_ARM_SELLER.url }
 val DICTIONARY_ARM_SELLER_URL by TProperty.notNullable { ServiceUrlBuilder.DICTIONARY_ARM_SELLER.url }
 val ERM_BACKEND_ARM_SELLER_URL by TProperty.notNullable { ServiceUrlBuilder.ERM_BACKEND_ARM_SELLER.url }
 val EVENTS_ARM_SELLER_URL by TProperty.notNullable { ServiceUrlBuilder.EVENTS_ARM_SELLER.url }
@@ -32,8 +32,10 @@ val USERSERVICE_ARM_SELLER_URL by TProperty.notNullable { ServiceUrlBuilder.USER
 
 //region [crm]
 val ADMIN360_FRONTEND_CRM_URL by TProperty.notNullable { ServiceUrlBuilder.ADMIN360_FRONTEND_CRM.url }
+val ERM_FRONTEND_URL by TProperty.notNullable { ServiceUrlBuilder.ERM.url }
 val MONITOR_FRONTEND_ARM_SELLER_URL by TProperty.notNullable { ServiceUrlBuilder.MONITOR_FRONTEND_ARM_SELLER.url }
 
+val ADMIN_360_URL by TProperty.notNullable { ServiceUrlBuilder.A360.url }
 val ACCESSES_CRM_URL by TProperty.notNullable { ServiceUrlBuilder.ACCESSES_CRM.url }
 val ADDRESSES_CRM_URL by TProperty.notNullable { ServiceUrlBuilder.ADDRESSES_CRM.url }
 val ADMIN360_BACKEND_CRM_URL by TProperty.notNullable { ServiceUrlBuilder.ADMIN360_BACKEND_CRM.url }

@@ -30,6 +30,15 @@ enum class ServiceUrlBuilder(
             else -> throw IllegalArgumentException("Unknown environment: $ENV")
         }
     },
+    A360("admin360-frontend", "crm") {
+        override val url: String
+            get() = when (ENV) {
+                "dev" -> super.url
+                "rc" -> super.url
+                "prod" -> "https://admin360.action-mcfr.ru/"
+                else -> throw IllegalArgumentException("Unknown ENV = $ENV")
+            }
+    },
     ASTERISK_ARM_SELLER(serviceName = "asterisk", productName = ARM_SELLER),
     USERSERVICE_ARM_SELLER(serviceName = "userservice", productName = ARM_SELLER),
     SETTINGS_ARM_SELLER(serviceName = "settings", productName = ARM_SELLER),
@@ -60,6 +69,15 @@ enum class ServiceUrlBuilder(
             Environment.PROD -> "https://admin360.action-mcfr.ru/"
             else -> throw IllegalArgumentException("Unknown environment: $ENV")
         }
+    },
+    ERM("erm-ssr-frontend", "arm-seller") {
+        override val url: String
+            get() = when (ENV) {
+                "dev" -> super.url
+                "rc" -> super.url
+                "prod" -> "https://erm.action-mcfr.ru/login"
+                else -> throw IllegalArgumentException("Unknown ENV = $ENV")
+            }
     },
     SCHOOL_CRM(serviceName = "school", productName = CRM),
     FILES_CRM(serviceName = "files", productName = CRM),

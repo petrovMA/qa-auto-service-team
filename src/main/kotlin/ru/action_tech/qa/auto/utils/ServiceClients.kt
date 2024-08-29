@@ -8,7 +8,7 @@ val identityApi by lazy { ApiClient(IDENTITY_URL) }
 
 //region [arm-seller]
 val asteriskArmSellerClient by lazy { ApiClient(url = ASTERISK_ARM_SELLER_URL) }
-val customerserviceArmSellerClient by lazy { ApiClient(url = CUSTOMERSERVICE_ARM_SELLER_URL) }
+val customerServiceArmSellerClient by lazy { ApiClient(url = CUSTOMER_SERVICE_ARM_SELLER_URL) }
 val dictionaryArmSellerClient by lazy { ApiClient(url = DICTIONARY_ARM_SELLER_URL) }
 val ermBackendArmSellerClient by lazy { ApiClient(url = ERM_BACKEND_ARM_SELLER_URL) }
 val eventsArmSellerClient by lazy { ApiClient(url = EVENTS_ARM_SELLER_URL) }
