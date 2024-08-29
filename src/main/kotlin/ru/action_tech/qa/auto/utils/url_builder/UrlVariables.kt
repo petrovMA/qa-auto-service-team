@@ -2,6 +2,9 @@ package ru.action_tech.qa.auto.utils.url_builder
 
 import ru.action_tech.qa.auto.core.properties.TProperty
 
+//region [identity]
+val IDENTITY_URL by TProperty.notNullable<String>()
+
 //region [arm-seller]
 val ERM_SSR_FRONTEND_ARM_SELLER_URL by TProperty.notNullable { ServiceUrlBuilder.ERM_SSR_FRONTEND_ARM_SELLER.url }
 

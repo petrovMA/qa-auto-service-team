@@ -2,16 +2,14 @@ package ru.action_tech.qa.auto.utils
 
 import ru.action_tech.qa.auto.api_models.crm_api.CrmApiRequests
 import ru.action_tech.qa.auto.api_models.crm_api.authorization.TokenRequest
-import ru.action_tech.qa.auto.api_models.crm_api.authorization.response.TokenResponse
+import ru.action_tech.qa.auto.api_models.crm_api.authorization.TokenResponse
 import ru.action_tech.qa.auto.api_models.public_api.PublicApiRequests
 import ru.action_tech.qa.auto.api_models.public_api.authorization.token.PublicAuthRequest
 import ru.action_tech.qa.auto.core.api.ApiClient
 import ru.action_tech.qa.auto.core.api.Request
-import ru.action_tech.qa.auto.crm.properties.IDENTITY_URL
-import ru.action_tech.qa.auto.erm.data.AUTO_ACTIONUSKA
-import ru.action_tech.qa.auto.utils.crmApiCrmClient
+import ru.action_tech.qa.auto.data.AUTO_ACTIONUSKA
 import ru.action_tech.qa.auto.utils.http.Headers
-import ru.action_tech.qa.auto.utils.publicApiCrmClient
+import ru.action_tech.qa.auto.utils.url_builder.IDENTITY_URL
 
 object ApiUtils {
     val sellerServiceUrl by lazy {

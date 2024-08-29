@@ -17,6 +17,6 @@ object Admin360BackendRequests {
             setContentType(ContentType.JSON)
             token?.let { addHeader(Headers.AUTHORIZATION, "Bearer $it") }
         },
-        send = { get("$apiV1/jobtitles_get") }
+        send = { get("/api/v1/jobtitles_get") }
     )
 }

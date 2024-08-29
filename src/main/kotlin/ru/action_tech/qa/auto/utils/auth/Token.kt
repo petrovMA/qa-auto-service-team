@@ -1,10 +1,11 @@
 package ru.action_tech.qa.auto.utils.auth
 
+import io.restassured.response.Response
+import ru.action_tech.qa.auto.data.*
 import ru.action_tech.qa.auto.utils.ApiUtils
-import ru.action_tech.qa.auto.erm.api.identity.*
-import ru.action_tech.qa.auto.erm.data.*
-import ru.action_tech.qa.auto.erm.utils.uuid
 import ru.action_tech.qa.auto.helpers.api.ServiceToolsApiHelper
+import ru.action_tech.qa.auto.utils.identityApi
+import ru.action_tech.qa.auto.utils.uuid
 
 val consumerId by lazy { "6cda9a6a-408d-4dea-9633-6350ac722cb4".uuid }
 
@@ -59,3 +60,6 @@ val publicApiToken
     ).getValue("access_token")
 
 val tokenTelephonyBackend by lazy { identityApi.send(getTelephonyBackendToken()).accessToken }
+
+fun Response.getValue(path: String): String = this.jsonPath().getString(path)
+fun Response.getValue(): String = this.asString()

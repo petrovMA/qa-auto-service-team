@@ -1,10 +1,11 @@
 package ru.action_tech.qa.auto.utils.auth
 
 import io.restassured.http.ContentType.URLENC
+import ru.action_tech.qa.auto.api_models.identity.ConnectTokenResponse
+import ru.action_tech.qa.auto.api_models.identity.UserInfoResponse
 import ru.action_tech.qa.auto.core.api.Model
 import ru.action_tech.qa.auto.core.api.Request
 import ru.action_tech.qa.auto.core.api.TRequest
-import ru.action_tech.qa.auto.utils.auth.tokenActionushka
 import ru.action_tech.qa.auto.utils.http.Headers.AUTHORIZATION
 
 fun getToken(
