@@ -1,0 +1,96 @@
+include:
+  - project: 'qa-auto/qa-auto-ci'
+    file: '.qa-auto.tests.gitlab-ci.yml'
+
+variables:
+  AUTO_TEST_REPOSITORY: 'qa-auto/qa-auto-sale-team'
+  AUTO_TESTS_JOB_TIMEOUT: 10000
+
+stages:
+  - test-dev
+  - test-rc
+  - test-prod
+
+.run_test_image:
+  tags:
+    - qa-erm-srm
+
+run_tests:
+  extends: .run_test_image
+  when: manual
+
+qa_test_dev:
+  extends: run_tests
+  stage: test-dev
+  needs:
+    - deploy-dev-k8s
+  allow_failure: true
+  when: on_success
+  except:
+    - master
+    - /^release/
+    - schedules
+
+test_rc:
+  extends: run_tests
+  variables:
+    AUTO_TEST_RUNNER: erm-ssr-backend.rc
+  stage: test-rc
+  needs:
+    - deploy-rc-k8s
+  allow_failure: true
+  when: manual
+  except:
+    - master
+  only:
+    - /^release/
+
+test_frontend_rc:
+  extends: run_tests
+  variables:
+    AUTO_TEST_RUNNER: erm-ssr-frontend.rc
+  stage: test-rc
+  needs:
+    - deploy-rc-k8s
+  allow_failure: true
+  when: manual
+  except:
+    - master
+  only:
+    - /^release/
+
+test_prod:
+  extends: run_tests
+  variables:
+    AUTO_TEST_RUNNER: erm-ssr-backend.prod
+  stage: test-prod
+  needs:
+    - deploy-prod-k8s
+  allow_failure: true
+  when: manual
+  except:
+    refs:
+      - schedules
+    variables:
+      - $IS_WIP_PROJECT == "1"
+  only:
+    - master
+    - /^release/
+
+test_frontend_prod:
+  extends: run_tests
+  variables:
+    AUTO_TEST_RUNNER: erm-ssr-frontend.prod
+  stage: test-prod
+  needs:
+    - deploy-prod-k8s
+  allow_failure: true
+  when: manual
+  except:
+    refs:
+      - schedules
+    variables:
+      - $IS_WIP_PROJECT == "1"
+  only:
+    - master
+    - /^release/
