@@ -1,0 +1,12 @@
+include:
+  - project: 'qa-auto/qa-auto-ci'
+    file: '.qa-auto.gitlab-ci.yml'
+    ref: master
+
+.run_test_image:
+  tags:
+    - qa-erm-srm
+
+run_tags_diff:
+  variables:
+    AUTO_TESTS_JOB_TIMEOUT: 10000
