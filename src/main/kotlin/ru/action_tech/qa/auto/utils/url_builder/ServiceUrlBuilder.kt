@@ -40,6 +40,7 @@ enum class ServiceUrlBuilder(
             }
     },
     ASTERISK_ARM_SELLER(serviceName = "asterisk", productName = ARM_SELLER),
+    IDENTITY_SERVICE("userservice", ARM_SELLER),
     USERSERVICE_ARM_SELLER(serviceName = "userservice", productName = ARM_SELLER),
     SETTINGS_ARM_SELLER(serviceName = "settings", productName = ARM_SELLER),
     CUSTOMERSERVICE_ARM_SELLER(serviceName = "customerservice", productName = ARM_SELLER),
