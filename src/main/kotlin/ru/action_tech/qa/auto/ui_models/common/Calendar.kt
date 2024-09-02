@@ -1,4 +1,4 @@
-package ru.action_tech.qa.auto.erm.view.common
+package ru.action_tech.qa.auto.ui_models.common
 
 import com.codeborne.selenide.Condition.*
 import ru.action_tech.qa.auto.core.invocation.invoke

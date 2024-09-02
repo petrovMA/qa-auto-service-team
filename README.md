@@ -1,92 +1,184 @@
-# qa-auto-sale-team
+# Автотесты ERM
 
+- [Как инициализируется properties и какие они есть](https://conf.action-media.ru/display/TES/Properties)
+- [Как запустить локально и посмотреть отчет](https://conf.action-media.ru/display/TES/FAQ)
+- [Ратоба с CCtray в автотестах](https://conf.action-media.ru/pages/viewpage.action?pageId=337866869)
 
+# local.properties
+Для локального запуска лучше использовать файл local.properties.
+Его необходимо создать в корне проекта (там же где и global.properties) и переопределять все желаемы properties.
+Ниже приведен примерный набор properties, которые необходимы для локального запуска.
 
-## Getting started
-
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
+```properties
+#PRESALE
+ALLURE_PROJECT=182
+#SALE 
+#ALLURE_PROJECT=15
+ELEMENT_TIMEOUT=10000
+#ELEMENT_POLLING_INTERVAL = 2000
+HTTP_LOG_TAKE=NEVER
+SCREENSHOT_TAKE=2
+SCREENSHOT_TAKE_FINAL_GIF_DELAY=850
+HUB_USE=false
+UPDATED_TESTS=true
+#-----------Сервис эмуляции звонка-----------
+#ASTERISK_SERVICE_URL=https://ccadmin.hq.icfed.com
+#-----------Адрес машины с cctray-----------
+#CCTRAY_IP_ADDRESS=10.15.132.68
+#-----------Корп. портал-----------
+#HOME_PORTAL_URL=https://home.action.group/
+#-----------IMAP-----------
+IMAP_SERVER=mail.action-media.ru
+IMAP_PORT=993
+IMAP_AUTH_EMAIL=testautotest
+IMAP_AUTH_PASSWORD=Aa12345%
+IMAP_MESSAGES_TIMEOUT=120000
+#---------dev-------------
+ENV=dev
+ASTERISK_URL=https://master-asterisk-arm-seller.dev.arm-seller.aservices.tech
+ERM_FRONTEND_URL=https://master-erm-ssr-frontend-arm-seller.dev.arm-seller.aservices.tech
+MONITOR_URL=https://master-monitor-frontend-arm-seller.dev.arm-seller.aservices.tech
+IDENTITY_URL=https://master-userservice-arm-seller.dev.arm-seller.aservices.tech
+CUSTOMER_URL=https://master-customerservice-arm-seller.dev.arm-seller.aservices.tech
+ORDERS_URL=https://master-orders-crm.dev.crm.aservices.tech
+DOCUMENTS_CRM_URL=https://master-documents-crm.dev.crm.aservices.tech
+STAT_SERVICE_URL=https://master-stat-arm-seller.dev.arm-seller.aservices.tech
+DEMOS_CRM_URL=https://master-demos-crm.dev.crm.aservices.tech
+PRODUCT_URL=https://master-product-crm.dev.crm.aservices.tech
+MANAGERS_URL=https://master-managers-arm-seller.dev.arm-seller.aservices.tech
+PHONE_CALLS_SERVICE_URL=https://master-phonecalls-arm-seller.dev.arm-seller.aservices.tech
+LOYALTY_URL=https://master-loyaltyservice-arm-seller.dev.arm-seller.aservices.tech
+BACKEND_SERVICE_URL=https://master-erm-backend-arm-seller.dev.arm-seller.aservices.tech
+SCRIPT_SERVICE_URL=https://master-script-arm-seller.dev.arm-seller.aservices.tech
+APPLICATIONS_BACKEND_CRM_URL=https://master-applications-backend-crm.dev.crm.aservices.tech
+DICTIONARY_URL=https://master-dictionary-arm-seller.dev.arm-seller.aservices.tech
+STOP_LIST_SERVICE_URL=https://master-stoplist-arm-seller.dev.arm-seller.aservices.tech
+PARTNERS_SERVICE_URL=https://master-partners-arm-seller.dev.arm-seller.aservices.tech
+NOTIFICATION_URL=https://master-hub-arm-seller.dev.arm-seller.aservices.tech/signalr
+MONITOR_BACKEND_SERVICE_URL=https://master-monitor-backend-arm-seller.dev.arm-seller.aservices.tech
+ACCESSES_CRM_URL=https://master-accesses-crm.dev.crm.aservices.tech
+ADDRESSES_CRM_URL=https://master-addresses-crm.dev.crm.aservices.tech
+FILES_CRM_URL=https://master-files-crm.dev.crm.aservices.tech
+PAYMENTS_CRM_URL=https://master-payments-crm.dev.crm.aservices.tech
+PUBLIC_API_CRM_URL=https://master-public-api-crm.dev.crm.aservices.tech
+SUPPORTS_CRM_URL=https://master-supports-crm.dev.crm.aservices.tech
+SHIPMENT_URL=https://master-shipment-crm.dev.crm.aservices.tech
+HUB_PHONE_CALL_URL=https://master-hub-arm-seller.dev.arm-seller.aservices.tech
+CRM_ACCESS_SERVICE_URL=http://master-accesses-crm.dev.crm.aservices.tech
+EVENTS_URL=https://master-events-arm-seller.dev.arm-seller.aservices.tech
+ONLINE_HELPER_BACKEND_CHATS_URL=https://master-online-helper-backend-chats.dev.chats.aservices.tech
+QA_URL=https://master-qa-arm-seller.dev.arm-seller.aservices.tech
+INCIDENTS_SRVC_URL=https://master-incidents-srvc.dev.srvc.aservices.tech
+SERVICE_BACKEND_SRVC_URL=https://master-service-backend-srvc.dev.srvc.aservices.tech
+#---------rc--------------
+#ENV=rc
+#ASTERISK_URL=https://release-asterisk-arm-seller.rc.arm-seller.aservices.tech
+#ERM_FRONTEND_URL=https://release-erm-ssr-frontend-arm-seller.rc.arm-seller.aservices.tech
+#MONITOR_URL=http://release-monitor-frontend-arm-seller.rc.arm-seller.aservices.tech
+#IDENTITY_URL=https://release-userservice-arm-seller.rc.arm-seller.aservices.tech
+#CUSTOMER_URL=https://release-customerservice-arm-seller.rc.arm-seller.aservices.tech
+#ORDERS_URL=https://release-orders-crm.rc.crm.aservices.tech
+#DOCUMENTS_CRM_URL=https://release-documents-crm.rc.crm.aservices.tech
+#STAT_SERVICE_URL=https://release-stat-arm-seller.rc.arm-seller.aservices.tech
+#DEMOS_CRM_URL=https://release-demos-crm.rc.crm.aservices.tech
+#PRODUCT_URL=https://release-product-crm.rc.crm.aservices.tech
+#MANAGERS_URL=https://release-managers-arm-seller.rc.arm-seller.aservices.tech
+#PHONE_CALLS_SERVICE_URL=https://release-phonecalls-arm-seller.rc.arm-seller.aservices.tech
+#LOYALTY_URL=https://release-loyaltyservice-arm-seller.rc.arm-seller.aservices.tech
+#BACKEND_SERVICE_URL=https://release-erm-backend-arm-seller.rc.arm-seller.aservices.tech
+#SCRIPT_SERVICE_URL=https://release-script-arm-seller.rc.arm-seller.aservices.tech
+#APPLICATIONS_BACKEND_CRM_URL=https://release-applications-backend-crm.rc.crm.aservices.tech
+#DICTIONARY_URL=https://release-dictionary-arm-seller.rc.arm-seller.aservices.tech
+#STOP_LIST_SERVICE_URL=https://release-stoplist-arm-seller.rc.arm-seller.aservices.tech
+#PARTNERS_SERVICE_URL=https://release-partners-arm-seller.rc.arm-seller.aservices.tech
+#NOTIFICATION_URL=https://release-hub-arm-seller.rc.arm-seller.aservices.tech/signalr
+#MONITOR_BACKEND_SERVICE_URL=https://release-monitor-backend-arm-seller.rc.arm-seller.aservices.tech
+#ACCESSES_CRM_URL=https://release-accesses-crm.rc.crm.aservices.tech
+#ADDRESSES_CRM_URL=https://release-addresses-crm.rc.crm.aservices.tech
+#FILES_CRM_URL=https://release-files-crm.rc.crm.aservices.tech
+#PAYMENTS_CRM_URL=https://release-payments-crm.rc.crm.aservices.tech
+#PUBLIC_API_CRM_URL=https://release-public-api-crm.rc.crm.aservices.tech
+#SUPPORTS_CRM_URL=https://release-supports-crm.rc.crm.aservices.tech
+#SHIPMENT_URL=https://release-shipment-crm.rc.crm.aservices.tech
+#HUB_PHONE_CALL_URL=https://release-hub-arm-seller.rc.arm-seller.aservices.tech
+#CRM_ACCESS_SERVICE_URL=http://release-accesses-crm.rc.crm.aservices.tech
+#EVENTS_URL=https://release-events-arm-seller.rc.arm-seller.aservices.tech
+#ONLINE_HELPER_BACKEND_CHATS_SOCKET_URL=http://master-rc-online-helper-backend-chats.dev.chats.aservices.tech
+#QA_URL=https://release-qa-arm-seller.rc.arm-seller.aservices.tech
+#INCIDENTS_SRVC_URL=https://release-incidents-srvc.rc.srvc.aservices.tech
+#SERVICE_BACKEND_SRVC_URL=https://release-service-backend-srvc.rc.srvc.aservices.tech
+#---------rc-stable-------
+#ENV=rc
+#ASTERISK_URL=https://stable-asterisk-arm-seller.rc.arm-seller.aservices.tech
+#ERM_FRONTEND_URL=https://stable-erm-ssr-frontend-arm-seller.rc.arm-seller.aservices.tech
+#MONITOR_URL=https://stable-monitor-frontend-arm-seller.rc.arm-seller.aservices.tech
+#IDENTITY_URL=https://stable-userservice-arm-seller.rc.arm-seller.aservices.tech
+#CUSTOMER_URL=https://stable-customerservice-arm-seller.rc.arm-seller.aservices.tech
+#ORDERS_URL=https://stable-orders-crm.rc.crm.aservices.tech
+#DOCUMENTS_CRM_URL=https://stable-documents-crm.rc.crm.aservices.tech
+#STAT_SERVICE_URL=https://stable-stat-arm-seller.rc.arm-seller.aservices.tech
+#DEMOS_CRM_URL=https://stable-demos-crm.rc.crm.aservices.tech
+#PRODUCT_URL=https://stable-product-crm.rc.crm.aservices.tech
+#MANAGERS_URL=https://stable-managers-arm-seller.rc.arm-seller.aservices.tech
+#PHONE_CALLS_SERVICE_URL=https://stable-phonecalls-arm-seller.rc.arm-seller.aservices.tech
+#LOYALTY_URL=https://stable-loyaltyservice-arm-seller.rc.arm-seller.aservices.tech
+#BACKEND_SERVICE_URL=https://stable-erm-backend-arm-seller.rc.arm-seller.aservices.tech
+#SCRIPT_SERVICE_URL=https://stable-script-arm-seller.rc.arm-seller.aservices.tech
+#APPLICATIONS_BACKEND_CRM_URL=https://stable-applications-backend-crm.rc.crm.aservices.tech
+#DICTIONARY_URL=https://stable-dictionary-arm-seller.rc.arm-seller.aservices.tech
+#STOP_LIST_SERVICE_URL=https://stable-stoplist-arm-seller.rc.arm-seller.aservices.tech
+#PARTNERS_SERVICE_URL=https://stable-partners-arm-seller.rc.arm-seller.aservices.tech
+#NOTIFICATION_URL=https://stable-hub-arm-seller.rc.arm-seller.aservices.tech/signalr
+#MONITOR_BACKEND_SERVICE_URL=https://stable-monitor-backend-arm-seller.rc.arm-seller.aservices.tech
+#ACCESSES_CRM_URL=https://stable-accesses-crm.rc.crm.aservices.tech
+#ADDRESSES_CRM_URL=https://stable-addresses-crm.rc.crm.aservices.tech
+#FILES_CRM_URL=https://stable-files-crm.rc.crm.aservices.tech
+#PAYMENTS_CRM_URL=https://stable-payments-crm.rc.crm.aservices.tech
+#PUBLIC_API_CRM_URL=https://stable-2-api-crm.rc.crm.aservices.tech
+#SUPPORTS_CRM_URL=https://stable-supports-crm.rc.crm.aservices.tech
+#SHIPMENT_URL=https://stable-shipment-crm.rc.crm.aservices.tech
+#HUB_PHONE_CALL_URL=https://stable-hub-arm-seller.rc.arm-seller.aservices.tech
+#CRM_ACCESS_SERVICE_URL=http://stable-accesses-crm.rc.crm.aservices.tech
+#EVENTS_URL=https://stable-events-arm-seller.rc.arm-seller.aservices.tech
+#ONLINE_HELPER_BACKEND_CHATS_SOCKET_URL=http://stable-online-helper-backend-chats.rc.chats.aservices.tech
+#QA_URL=https://stable-qa-arm-seller.rc.arm-seller.aservices.tech
+#INCIDENTS_SRVC_URL=https://stable-incidents-srvc.rc.srvc.aservices.tech
+#SERVICE_BACKEND_SRVC_URL=https://stable-service-backend-srvc.rc.srvc.aservices.tech
+#--------prod-------------
+#ENV=prod
+#ASTERISK_URL=https://asterisk-arm-seller.prod.arm-seller.aservices.tech
+#ERM_FRONTEND_URL=https://erm.action-mcfr.ru
+#MONITOR_URL=https://monitor.action-mcfr.ru
+#IDENTITY_URL=http://userservice-arm-seller.prod.arm-seller.aservices.tech
+#CUSTOMER_URL=http://customerservice-arm-seller.prod.arm-seller.aservices.tech
+#ORDERS_URL=http://orders-crm.prod.crm.aservices.tech
+#DOCUMENTS_CRM_URL=http://documents-crm.prod.crm.aservices.tech
+#STAT_SERVICE_URL=http://stat-arm-seller.prod.arm-seller.aservices.tech
+#DEMOS_CRM_URL=http://demos-crm.prod.crm.aservices.tech
+#PRODUCT_URL=http://product-crm.prod.crm.aservices.tech
+#MANAGERS_URL=http://managers-arm-seller.prod.arm-seller.aservices.tech
+#PHONE_CALLS_SERVICE_URL=http://phonecalls-arm-seller.prod.arm-seller.aservices.tech
+#LOYALTY_URL=http://loyaltyservice-arm-seller.prod.arm-seller.aservices.tech
+#BACKEND_SERVICE_URL=http://erm-backend-arm-seller.prod.arm-seller.aservices.tech
+#SCRIPT_SERVICE_URL=http://script-arm-seller.prod.arm-seller.aservices.tech
+#APPLICATIONS_BACKEND_CRM_URL=http://applications-backend-arm-seller.prod.arm-seller.aservices.tech
+#DICTIONARY_URL=http://dictionary-arm-seller.prod.arm-seller.aservices.tech
+#STOP_LIST_SERVICE_URL=http://stoplist-arm-seller.prod.arm-seller.aservices.tech
+#PARTNERS_SERVICE_URL=http://partners-arm-seller.prod.arm-seller.aservices.tech
+#NOTIFICATION_URL=http://hub-arm-seller.prod.arm-seller.aservices.tech
+#MONITOR_BACKEND_SERVICE_URL=http://monitor-backend-arm-seller.prod.arm-seller.aservices.tech
+#ACCESSES_CRM_URL=http://accesses-crm.prod.crm.aservices.tech
+#ADDRESSES_CRM_URL=http://addresses-crm.prod.crm.aservices.tech
+#FILES_CRM_URL=http://files-crm.prod.crm.aservices.tech
+#PAYMENTS_CRM_URL=http://payments-crm.prod.crm.aservices.tech
+#PUBLIC_API_CRM_URL=http://public-api-crm.prod.crm.aservices.tech
+#SUPPORTS_CRM_URL=http://supports-crm.prod.crm.aservices.tech
+#SHIPMENT_URL=https://shipment-crm.prod.crm.aservices.tech
+#HUB_PHONE_CALL_URL=https://hub-arm-seller.prod.arm-seller.aservices.tech
+#CRM_ACCESS_SERVICE_URL=http://accesses-crm.prod.crm.aservices.tech
+#EVENTS_URL=https://events-arm-seller.prod.arm-seller.aservices.tech
+#ONLINE_HELPER_BACKEND_CHATS_URL=https://online-helper-backend-chats.prod.chats.aservices.tech
+#QA_URL=https://qa-arm-seller.prod.arm-seller.aservices.tech
+#INCIDENTS_SRVC_URL=https://incidents-srvc.prod.srvc.aservices.tech
+#SERVICE_BACKEND_SRVC_URL=https://service-backend-srvc.prod.srvc.aservices.tech
 ```
-cd existing_repo
-git remote add origin https://gitlab.action-media.ru/qa-auto/qa-auto-sale-team.git
-git branch -M master
-git push -uf origin master
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.action-media.ru/qa-auto/qa-auto-sale-team/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.

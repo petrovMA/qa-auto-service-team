@@ -1,7 +1,5 @@
 package ru.action_tech.qa.auto.utils
 
-import ru.action_tech.qa.auto.core.properties.TProperty
-
 const val HOME_PORTAL_URL = "https://home.action.group/"
 const val CCTRAY_IP_ADDRESS = "10.15.154.14"
 const val COMPANY_TYPE = "!Служебные"
