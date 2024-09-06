@@ -1,6 +1,7 @@
 package ru.action_tech.qa.auto.utils
 
 import ru.action_tech.qa.auto.core.api.ApiClient
+import ru.action_tech.qa.auto.utils.http.Headers
 import ru.action_tech.qa.auto.utils.url_builder.*
 
 //region [identity]
@@ -38,7 +39,11 @@ val crmApiCrmClient by lazy { ApiClient(url = CRM_API_CRM_URL) }
 val demosCrmClient by lazy { ApiClient(url = DEMOS_CRM_URL) }
 val documentsCrmClient by lazy { ApiClient(url = DOCUMENTS_CRM_URL) }
 val filesCrmClient by lazy { ApiClient(url = FILES_CRM_URL) }
-val ordersCrmClient by lazy { ApiClient(url = ORDERS_CRM_URL) }
+val ordersCrmClient by lazy {
+    ApiClient(
+        url = ORDERS_CRM_URL,
+        spec = { addHeader(Headers.CONTENT_TYPE, "application/json") })
+}
 val paymentsCrmClient by lazy { ApiClient(url = PAYMENTS_CRM_URL) }
 val productCrmClient by lazy { ApiClient(url = PRODUCT_CRM_URL) }
 val publicApiCrmClient by lazy { ApiClient(url = PUBLIC_API_CRM_URL) }
