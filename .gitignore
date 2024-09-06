@@ -1,7 +1,6 @@
 .idea
 .gradle
 .allure
-.run
 
 tmp
 out
@@ -9,13 +8,10 @@ allure-results
 build
 detekt
 local.properties
-local.tmp.properties
+*.tmp.properties
 *.remote.properties
 *.local.properties
 *.log
 *.iml
-ajcore.*
+*.png
 .DS_Store
-
-cases_to_tests.json
-testrail_statuses.json
