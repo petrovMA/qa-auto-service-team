@@ -195,7 +195,7 @@ object CheckBadRequests {
     }
 
     data class BrokenRuleTechnical(
-        val code: Int,
+        val code: Int = 0,
         val message1: String,
         val message2: String
     ) : Serializable {

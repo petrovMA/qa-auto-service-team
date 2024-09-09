@@ -18,6 +18,7 @@ val pressAppToken by lazy { ApiUtils.getPressAppToken() }
 val tokenHomePortalApp by lazy { ApiUtils.getHomePortalAppToken() }
 val tokenPlatformApp: String by lazy { ApiUtils.getPlatformAppToken() }
 val tokenTechPlat: String by lazy { ApiUtils.getTechPlatToken() }
+val tokenArm by lazy { ApiUtils.getArmToken() }
 val tokenQA by lazy { identityApi.send(getQAToken()).accessToken }
 
 val tokenActionushka by lazy {

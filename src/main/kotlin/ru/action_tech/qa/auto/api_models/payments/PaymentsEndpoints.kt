@@ -1,0 +1,15 @@
+package ru.action_tech.qa.auto.api_models.payments
+
+const val paymentsGetPaidOrdersByIds = "/api/v1/payments_get-paid-orders-by-ids"
+const val customerBalanceGet = "/api/v1/customer-balance_get"
+const val paymentBalanceGetListByPayment = "/api/v1/payment-balance_get-list-by-payment"
+const val transactionGetListByPayment = "/api/v1/transaction_get-list-by-payment"
+const val transactionCreate = "/api/v1/transaction_create"
+const val qaPaymentDelete = "/api/v1/qa/payment_delete"
+const val qaPaymentCreate = "/api/v1/qa/payment_create"
+const val qaPaymentCreateInstallment = "/api/v1/qa/payment_create-installment"
+const val paymentsGetListByCustomer = "/api/v1/payments_get-list-by-customer"
+const val paymentsGetByCustomerIdByPaymentDateRange = "/api/v1/payments_get-by-customer-id-by-payment-date-range"
+const val paymentsGetBySubscribeIds = "/api/v1/payments_get-by-subscribe-ids"
+const val bankStatementAdd = "/api/v1/bankstatement_add"
+const val bankStatementGetListByPayment = "/api/v1/bankstatement_get-list-by-payment"
