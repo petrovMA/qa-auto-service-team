@@ -30,11 +30,7 @@ annotation class TransactionDeleteByIdsV1
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION)
 annotation class TransactionCreateV1
 
-@Feature("/api/v1/payment_delete")
-@Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION)
-annotation class QaPaymentDeleteV1
-
-@Feature(bankStatementGetListByPayment)
+@Feature(paymentsGetListByCustomer)
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION)
 annotation class PaymentsGetListByCustomerV1
 

@@ -21,7 +21,7 @@ class Test_CustomerBalanceGet {
     @Sale_Payments
     @CustomerBalanceGetV1
     @Response_200_Ok
-    @DisplayName("$customerBalanceGet -> 200 ok")
+    @DisplayName("$customerBalanceGet -> 200 Ok")
     @AllureId("145842")
     fun test_CustomerBalanceGetPositive() {
         val response = paymentsCrmClient.send(

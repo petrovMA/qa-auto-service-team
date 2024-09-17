@@ -306,4 +306,5 @@ object QueryParams {
     const val INPUT_DATE = "inputDate"
     const val PRICE_LEVEL_ID = "priceLevelId"
     const val FILE = "File"
+    const val SENDING_IDS = "sendingIds"
 }

@@ -9,6 +9,7 @@ import ru.action_tech.qa.auto.api_models.Response_400_Bad_Request
 import ru.action_tech.qa.auto.api_models.Sale_Payments
 import ru.action_tech.qa.auto.api_models.payments.PaymentsGetListByCustomerV1
 import ru.action_tech.qa.auto.api_models.payments.PaymentsRequests
+import ru.action_tech.qa.auto.api_models.payments.paymentsGetListByCustomer
 import ru.action_tech.qa.auto.core.annotations.HistoryIssues
 import ru.action_tech.qa.auto.core.annotations.Requirements
 import ru.action_tech.qa.auto.utils.paymentsCrmClient
@@ -22,7 +23,7 @@ class Test_PaymentsGetListByCustomerBadRequest {
     @Sale_Payments
     @PaymentsGetListByCustomerV1
     @Response_400_Bad_Request
-    @DisplayName("/api/v1/payments_get-list-by-customer -> 400 Bad Request: ids = null")
+    @DisplayName("$paymentsGetListByCustomer -> 400 Bad Request: ids = null")
     @AllureId("145838")
     fun testWrongRequest() {
         checkBR(
@@ -37,7 +38,7 @@ class Test_PaymentsGetListByCustomerBadRequest {
     @Sale_Payments
     @PaymentsGetListByCustomerV1
     @Response_400_Bad_Request
-    @DisplayName("/api/v1/payments_get-list-by-customer -> 400 Bad Request: не передан параметр ids")
+    @DisplayName("$paymentsGetListByCustomer -> 400 Bad Request: не передан параметр ids")
     @AllureId("145837")
     fun testWrongIds() {
         checkBR(

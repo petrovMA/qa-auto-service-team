@@ -7,6 +7,7 @@ import ru.action_tech.qa.auto.api_models.Response_200_Ok
 import ru.action_tech.qa.auto.api_models.Sale_Payments
 import ru.action_tech.qa.auto.api_models.payments.PaymentsGetListByCustomerV1
 import ru.action_tech.qa.auto.api_models.payments.PaymentsRequests
+import ru.action_tech.qa.auto.api_models.payments.paymentsGetListByCustomer
 import ru.action_tech.qa.auto.core.annotations.Requirements
 import ru.action_tech.qa.auto.core.assertions.assertEqual
 import ru.action_tech.qa.auto.core.assertions.assertTrue
@@ -24,7 +25,7 @@ class Test_PaymentsGetListByCustomer {
     @Sale_Payments
     @PaymentsGetListByCustomerV1
     @Response_200_Ok
-    @DisplayName("/api/v1/payments_get-list-by-customer -> 200 ok")
+    @DisplayName("$paymentsGetListByCustomer -> 200 Ok")
     @AllureId("145839")
     fun test() {
         val response = paymentsCrmClient.send(PaymentsRequests.paymentsGetListByCustomer(arrayOf(custId)))

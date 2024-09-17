@@ -24,7 +24,7 @@ class Test_BankStatementGetListByPayment {
     @Sale_Payments
     @BankStatementGetListByPaymentV1
     @Response_200_Ok
-    @DisplayName("$bankStatementGetListByPayment -> 200 ok")
+    @DisplayName("$bankStatementGetListByPayment -> 200 Ok")
     @AllureId("145836")
     fun test() {
         val response = paymentsCrmClient.send(PaymentsRequests.bankStatementGetListByPayment(BankStatementGetListByPaymentRequest(listOf(id))))

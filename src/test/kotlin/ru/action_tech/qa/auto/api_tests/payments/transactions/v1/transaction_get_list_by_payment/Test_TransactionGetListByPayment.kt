@@ -24,7 +24,7 @@ class Test_TransactionGetListByPayment {
     @Sale_Payments
     @TransactionGetListByPaymentV1
     @Response_200_Ok
-    @DisplayName("$transactionGetListByPayment -> 200 ok")
+    @DisplayName("$transactionGetListByPayment -> 200 Ok")
     @AllureId("145848")
     fun test_TransactionGetListByPaymentPositive() {
         val response =
