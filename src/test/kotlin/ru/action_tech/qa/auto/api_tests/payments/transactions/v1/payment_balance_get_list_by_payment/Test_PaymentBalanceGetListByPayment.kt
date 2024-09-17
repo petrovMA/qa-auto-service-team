@@ -35,7 +35,7 @@ class Test_PaymentBalanceGetListByPayment {
     @Sale_Payments
     @PaymentBalanceGetListByPaymentV1
     @Response_200_Ok
-    @DisplayName("$paymentBalanceGetListByPayment -> 200 ok")
+    @DisplayName("$paymentBalanceGetListByPayment -> 200 Ok")
     @AllureId("145845")
     fun test_PaymentBalanceGetListByPaymentPositive() {
         val response = paymentsCrmClient.send(

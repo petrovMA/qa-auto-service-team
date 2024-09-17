@@ -14,9 +14,11 @@ import ru.action_tech.qa.auto.api_models.payments.transactions.v1.payment_balanc
 import ru.action_tech.qa.auto.api_models.payments.transactions.v1.transaction_create.request.TransactionCreateRequest
 import ru.action_tech.qa.auto.api_models.payments.transactions.v1.transaction_get_list_by_payment.request.TransactionGetListByPaymentRequest
 import ru.action_tech.qa.auto.api_models.payments.transactions.v1.transaction_get_list_by_payment.response.TransactionGetListByPaymentResponse
+import ru.action_tech.qa.auto.api_models.payments.transactions.v1.transactions_get_list_by_sendings.TransactionGetLisBySendingsResponse
 import ru.action_tech.qa.auto.core.api.Model
 import ru.action_tech.qa.auto.core.api.Request
 import ru.action_tech.qa.auto.core.api.TRequest
+import ru.action_tech.qa.auto.utils.auth.tokenActionushka
 import ru.action_tech.qa.auto.utils.auth.tokenArm
 import ru.action_tech.qa.auto.utils.auth.tokenAutoActionushka
 import ru.action_tech.qa.auto.utils.http.Headers
@@ -238,5 +240,21 @@ object PaymentsRequests {
             }
         },
         send = { get(bankStatementGetListByPayment) }
+    )
+
+    fun transactionGetListBySendings(sendingIds: List<String?>?, token: String = tokenActionushka) = TRequest(
+        desc = "Получение ДДС (транзакций) по списку отправлений",
+        model = Model<Array<TransactionGetLisBySendingsResponse>>(),
+        spec = {
+            setContentType(ContentType.JSON)
+            addHeader(Headers.AUTHORIZATION, "Bearer $token")
+            sendingIds?.let {
+                addQueryParam(
+                    QueryParams.SENDING_IDS,
+                    it.joinToString(separator = ",", prefix = "[", postfix = "]") { id -> "'$id'" }
+                )
+            }
+        },
+        send = { get(transactionGetListBySendings) }
     )
 }

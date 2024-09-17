@@ -32,7 +32,7 @@ class Test_TransactionCreate {
     @Sale_Payments
     @TransactionCreateV1
     @Response_200_Ok
-    @DisplayName("$transactionCreate -> 200 ok")
+    @DisplayName("$transactionCreate -> 200 Ok")
     @AllureId("155156")
     fun test_TransactionCreatePositive() {
         val response = paymentsCrmClient.send(request)

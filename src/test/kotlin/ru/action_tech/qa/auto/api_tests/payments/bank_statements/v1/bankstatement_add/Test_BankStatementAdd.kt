@@ -76,7 +76,7 @@ class Test_BankStatementAdd {
     @Sale_Payments
     @BankStatementAddV1
     @Response_200_Ok
-    @DisplayName("$bankStatementAdd -> 200 ok")
+    @DisplayName("$bankStatementAdd -> 200 Ok")
     @AllureId("145833")
     fun test_BankStatementAddPositive() {
         val response = paymentsCrmClient.send(request)

@@ -1,0 +1,71 @@
+package ru.action_tech.qa.auto.api_models.erm_backend.shipment.v1.sendings_get_by_customer_id
+
+data class SendingsGetByCustomerIdResponse(
+    val address1: String?,
+    val address2: String?,
+    val address3: String?,
+    val advanceNr: String?,
+    val batchId: String?,
+    val batchName: String?,
+    val batchNr: String?,
+    val contact: String?,
+    val courierAddress: String?,
+    val custContactId: String?,
+    val customerId: String,
+    val dateBatchClose: String?,
+    val deliveryDate: String?,
+    val deliveryNonNotesDate: String?,
+    val docDate: String?,
+    val fullAddress: String?,
+    val invoiceNr: String?,
+    val packageFormat: String?,
+    val packageFormatId: String?,
+    val path: String?,
+    val product: String?,
+    val registeredSendingNr: String?,
+    val sendingCategory: String?,
+    val sendingContents: List<SendingContent>?,
+    val sendingDeliveryResultId: Int?,
+    val sendingId: String,
+    val sendingNr: String?,
+    val sendingType: String?,
+    val shipping: String?,
+    val status: String?,
+    val trackNumber: String?,
+    val verificationActName: String?
+) {
+    data class SendingContent(
+        val actionAccountId: String?,
+        val adjustmentInvoiceId: String?,
+        val amount: Int?,
+        val articleId: String?,
+        val fssId: String?,
+        val id: String,
+        val invoiceId: String?,
+        val mcfrId: String?,
+        val ndsId: String?,
+        val ndsSum: Int?,
+        val ndsSumBase: Int?,
+        val orderContentId: String?,
+        val orderId: String?,
+        val partnerSubsId: String?,
+        val product: Product?,
+        val productId: String?,
+        val sendingContentNr: String?,
+        val sendingContentState: Int?,
+        val sendingId: String?,
+        val subscribeId: String?,
+        val totalSum: Int?,
+        val totalSumBase: Int?
+    ) {
+        data class Product(
+            val id: String,
+            val mainProductId: String?,
+            val name: String?,
+            val number: String?,
+            val productTypeId: String,
+            val urlAddress: String?,
+            val versionId: String
+        )
+    }
+}
