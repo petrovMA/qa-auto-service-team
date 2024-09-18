@@ -1,7 +1,7 @@
 package ru.action_tech.qa.auto.data
 
 object FieldData {
-    val PATTERN_FOR_ID = "[A-z,\\d]{8}-[A-z,\\d]{4}-[A-z,\\d]{4}-[A-z,\\d]{4}-[A-z,\\d]{12}".toPattern()
+    val PATTERN_FOR_ID = "[A-z,\\d]{8}-[A-z,\\d]{4}-[A-z,\\d]{4}-[A-z,\\d]{4}-[A-z,\\d]{12}".toRegex()
     val REGEX_FOR_ID = "[A-z,\\d]{8}-[A-z,\\d]{4}-[A-z,\\d]{4}-[A-z,\\d]{4}-[A-z,\\d]{12}".toRegex()
     val PATTERN_FOR_UKD = "\\d{4}-\\d{4}-\\d{4}-\\d{4}-\\d{4}".toPattern()
     val REGEX_FOR_UKD = "\\d{4}-\\d{4}-\\d{4}-\\d{4}-\\d{4}".toRegex()

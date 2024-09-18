@@ -1,0 +1,31 @@
+package ru.action_tech.qa.auto.api_models.supports.support.v1.opportunity_a360_get_by_bush_action360_support_statuses.response
+
+data class OpportunityA360GetByBushAction360SupportStatusesResponse(
+    val account: Any?,
+    val accountId: String?,
+    val base: Base?,
+    val bizUnitId: Any?,
+    val bushAction360: BushAction360?,
+    val bushAction360Id: String?,
+    val contact: Any?,
+    val contactId: Any?,
+    val endDate: String?,
+    val id: String?,
+    val license: Any?,
+    val licenseId: Any?,
+    val listId: Any?,
+    val mainProduct: Any?,
+    val mainProductId: Any?,
+    val name: Any?,
+    val partner: Any?,
+    val partnerId: String?,
+    val rejectedOn: Any?,
+    val startDate: String?,
+    val status: Int?,
+    val supportChangeReason: Any?,
+    val supportChangeReasonId: String?,
+    val supportLicenses: Any?,
+    val supportType: Int?,
+    val systemUser: Any?,
+    val systemUserId: String?
+)

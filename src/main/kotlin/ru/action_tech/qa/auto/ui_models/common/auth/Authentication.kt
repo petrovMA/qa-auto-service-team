@@ -3,7 +3,6 @@ package ru.action_tech.qa.auto.ui_models.common.auth
 import com.codeborne.selenide.Condition.disappear
 import com.codeborne.selenide.Condition.visible
 import ru.action_tech.qa.auto.api_models.managers.v2.manager_get.ManagerGetV2Response
-import ru.action_tech.qa.auto.utils.Manager
 import ru.action_tech.qa.auto.core.browser.Window
 import ru.action_tech.qa.auto.core.browser.window
 import ru.action_tech.qa.auto.core.invocation.invoke
@@ -15,6 +14,7 @@ import ru.action_tech.qa.auto.ui_models.erm.employerCard
 import ru.action_tech.qa.auto.ui_models.erm.ermMainForm
 import ru.action_tech.qa.auto.ui_models.erm.search.searchForm
 import ru.action_tech.qa.auto.utils.HOME_PORTAL_URL
+import ru.action_tech.qa.auto.utils.Manager
 import ru.action_tech.qa.auto.utils.url_builder.ERM_FRONTEND_URL
 
 fun openPageAndAuth(manager: Managers, url: String = ERM_FRONTEND_URL) {

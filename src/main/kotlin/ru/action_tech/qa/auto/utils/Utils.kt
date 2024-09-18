@@ -107,6 +107,13 @@ fun getRandomRussianNumberToString(startRange: Long = 100000000, endRange: Long 
     return nums.random().toString() + (startRange..endRange).random().toString()
 }
 
+fun getRandomString(length: Int): String {
+    val allowedChars = ('А'..'Я') + ('а'..'я')
+    return (1..length)
+        .map { allowedChars.random() }
+        .joinToString("")
+}
+
 fun getRandomRussianNumberWithPrefix98(): String = "98" + getRandomRussianNumberToString()
 
 /**
