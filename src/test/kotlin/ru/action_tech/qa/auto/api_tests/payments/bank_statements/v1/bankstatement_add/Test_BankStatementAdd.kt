@@ -80,7 +80,7 @@ class Test_BankStatementAdd {
     @AllureId("145833")
     fun test_BankStatementAddPositive() {
         val response = paymentsCrmClient.send(request)
-        assertTrue(response.id?.matches(FieldData.PATTERN_FOR_ID.toRegex()) ?: false)
+        assertTrue(response.id?.matches(FieldData.PATTERN_FOR_ID) ?: false)
         assertTrue(response.name?.matches("\\d+".toRegex()) ?: false)
     }
 }

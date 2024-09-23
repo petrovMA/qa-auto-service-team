@@ -12,6 +12,8 @@ stages:
     - qa-erm-srm
 
 run_tests:
+  extends: .run_test_image
+  when: manual
   allow_failure: true
 
 # джобы с названием 'qa_test_...' запускает робот
@@ -19,11 +21,12 @@ qa_test_dev_sale:
   extends: run_tests
   stage: test-dev
   when: on_success
+  allow_failure: true
   variables:
+    AUTO_TEST_REPOSITORY: 'qa-auto/qa-auto-sale-team'
     ENV: dev
     PRODUCT: 'payments.crm'
-    AUTO_TEST_REPOSITORY: 'qa-auto/qa-auto-sale-team'
-    ALLURE_RQL: 'cf["Epic"] is "[SALE] Payments" and not tag in ["not_automated","skip_for_dev"]'
+    ALLURE_RQL: 'cf["Epic"] in ["[SALE] Payments"] and not tag in ["not_automated","skip_for_dev"]'
     ALLURE_LAUNCH_NAME: 'payments.crm_{JIRA_ISSUE}_{ENV}_{CI_JOB_STARTED_AT}'
   needs:
     - deploy-dev-k8s
@@ -32,17 +35,14 @@ qa_test_dev_sale:
     - /^release/
     - schedules
 
-test_rc_sale_frontend:
+test_rc_erm_frontend:
   extends: run_tests
   stage: test-rc
   when: manual
+  allow_failure: true
   variables:
-    ENV: rc
-    PRODUCT: 'erm-ssr'
-    AUTO_TEST_REPOSITORY: 'qa-auto/qa-auto-sale-team'
-    AUTO_TEST_RUNNER: erm-ssr.rc
-    ALLURE_RQL: 'not cf["Epic"] in ["[SALE] Admin360","[SALE] UI-ERM"] and not tag in ["not_automated","skip_for_rc"]'
-    ALLURE_LAUNCH_NAME: 'ERM-SSR_{JIRA_ISSUE}_{ENV}_{CI_JOB_STARTED_AT}'
+    AUTO_TEST_REPOSITORY: 'qa-auto/qa-auto-erm-ssr'
+    AUTO_TEST_RUNNER: erm-ssr-frontend.rc
   needs:
     - deploy-rc-k8s
   except:
@@ -50,16 +50,48 @@ test_rc_sale_frontend:
   only:
     - /^release/
 
-test_prod_sale:
+test_rc_erm_backend:
+  extends: run_tests
+  stage: test-rc
+  when: manual
+  allow_failure: true
+  variables:
+    AUTO_TEST_REPOSITORY: 'qa-auto/qa-auto-erm-ssr'
+    AUTO_TEST_RUNNER: erm-ssr-backend.rc
+  needs:
+    - deploy-rc-k8s
+  except:
+    - master
+  only:
+    - /^release/
+
+test_prod_erm_frontend:
   extends: run_tests
   stage: test-prod
   when: manual
+  allow_failure: true
   variables:
-    ENV: prod
-    PRODUCT: 'erm-ssr'
-    AUTO_TEST_REPOSITORY: 'qa-auto/qa-auto-sale-team'
-    ALLURE_RQL: 'not cf["Epic"] in ["[SALE] Admin360","[SALE] UI-ERM"] and not tag in ["not_automated","skip_for_prod"]'
-    ALLURE_LAUNCH_NAME: 'ERM-SSR_{ENV}_{CI_JOB_STARTED_AT}'
+    AUTO_TEST_REPOSITORY: 'qa-auto/qa-auto-erm-ssr'
+    AUTO_TEST_RUNNER: erm-ssr-frontend.prod
+  needs:
+    - deploy-prod-k8s
+  except:
+    refs:
+      - schedules
+    variables:
+      - $IS_WIP_PROJECT == "1"
+  only:
+    - master
+    - /^release/
+
+test_prod_erm_backend:
+  extends: run_tests
+  stage: test-prod
+  when: manual
+  allow_failure: true
+  variables:
+    AUTO_TEST_REPOSITORY: 'qa-auto/qa-auto-erm-ssr'
+    AUTO_TEST_RUNNER: erm-ssr-backend.prod
   needs:
     - deploy-prod-k8s
   except:
