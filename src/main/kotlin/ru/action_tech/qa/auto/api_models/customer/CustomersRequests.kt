@@ -14,10 +14,10 @@ import ru.action_tech.qa.auto.api_models.customer.search.v1.customers.search_cus
 import ru.action_tech.qa.auto.api_models.customer.search.v1.customers.search_customers.SearchCustomersResponse
 import ru.action_tech.qa.auto.core.api.Model
 import ru.action_tech.qa.auto.core.api.TRequest
-import ru.action_tech.qa.auto.erm.api.requests.erm.customer.qa.v1.customer_set_support_partners.CustomerSetSupportPartnersRequest
+import ru.action_tech.qa.auto.api_models.customer.qa.customer_set_support_partners.CustomerSetSupportPartnersRequest
 import ru.action_tech.qa.auto.api_models.customer.qa.customer_set_support_type.CustomerSetSupportTypeRequest
-import ru.action_tech.qa.auto.erm.api.requests.erm.customer.customer.info_bybitrix.InfoByBitrixRequest
-import ru.action_tech.qa.auto.erm.api.requests.erm.customer.customer.info_bybitrix.InfoBybitrixResponse
+import ru.action_tech.qa.auto.api_models.customer.customer.v1.info_bybitrix.InfoByBitrixRequest
+import ru.action_tech.qa.auto.api_models.customer.customer.v1.info_bybitrix.InfoBybitrixResponse
 import ru.action_tech.qa.auto.utils.auth.tokenAutoActionushka
 import ru.action_tech.qa.auto.utils.auth.tokenQA
 import ru.action_tech.qa.auto.utils.http.Headers

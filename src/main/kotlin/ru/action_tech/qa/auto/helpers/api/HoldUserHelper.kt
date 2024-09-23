@@ -5,8 +5,8 @@ import ru.action_tech.qa.auto.core.commons.generator.entity.user.User
 import ru.action_tech.qa.auto.core.commons.generator.getHeldUser
 import ru.action_tech.qa.auto.core.invocation.invoke
 import ru.action_tech.qa.auto.core.utils.waiting.Wait
-import ru.action_tech.qa.auto.erm.api.requests.erm.customer.customer.info_bybitrix.InfoByBitrixRequest
-import ru.action_tech.qa.auto.erm.api.requests.erm.customer.customer.info_bybitrix.InfoBybitrixResponse
+import ru.action_tech.qa.auto.api_models.customer.customer.v1.info_bybitrix.InfoByBitrixRequest
+import ru.action_tech.qa.auto.api_models.customer.customer.v1.info_bybitrix.InfoBybitrixResponse
 import ru.action_tech.qa.auto.utils.customerServiceArmSellerClient
 
 

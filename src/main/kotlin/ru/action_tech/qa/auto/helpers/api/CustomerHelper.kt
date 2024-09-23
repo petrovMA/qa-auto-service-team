@@ -16,7 +16,7 @@ import ru.action_tech.qa.auto.core.serialization.facade.deserialize
 import ru.action_tech.qa.auto.core.utils.waiting.Wait
 import ru.action_tech.qa.auto.data.Country
 import ru.action_tech.qa.auto.data.CustomerSupportType.SK
-import ru.action_tech.qa.auto.erm.api.requests.erm.customer.qa.v1.customer_set_support_partners.CustomerSetSupportPartnersRequest
+import ru.action_tech.qa.auto.api_models.customer.qa.customer_set_support_partners.CustomerSetSupportPartnersRequest
 import ru.action_tech.qa.auto.utils.*
 import ru.action_tech.qa.auto.utils.http.Headers.DATE
 import ru.action_tech.qa.auto.utils.http.Headers.X_OPERATION_ID

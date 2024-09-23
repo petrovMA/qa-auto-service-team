@@ -1,5 +1,3 @@
-package ru.action_tech.qa.auto.erm.api.requests.erm.customer.customer.info_bybitrix
+package ru.action_tech.qa.auto.api_models.customer.customer.v1.info_bybitrix
 
-data class InfoByBitrixRequest(
-    val bitrixIds: Any?
-)
+data class InfoByBitrixRequest(val bitrixIds: Any?)

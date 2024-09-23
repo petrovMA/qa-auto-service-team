@@ -1,4 +1,4 @@
-package ru.action_tech.qa.auto.erm.api.requests.erm.customer.qa.v1.customer_set_support_partners
+package ru.action_tech.qa.auto.api_models.customer.qa.customer_set_support_partners
 
 import java.util.*
 
