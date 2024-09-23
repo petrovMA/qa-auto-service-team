@@ -17,7 +17,7 @@ run_tests:
   allow_failure: true
 
 # джобы с названием 'qa_test_...' запускает робот
-qa_test_dev_sale:
+qa_test_dev_erm:
   extends: run_tests
   stage: test-dev
   when: on_success
@@ -25,9 +25,9 @@ qa_test_dev_sale:
   variables:
     AUTO_TEST_REPOSITORY: 'qa-auto/qa-auto-sale-team'
     ENV: dev
-    PRODUCT: 'payments.crm'
-    ALLURE_RQL: 'cf["Epic"] in ["[SALE] Payments"] and not tag in ["not_automated","skip_for_dev"]'
-    ALLURE_LAUNCH_NAME: 'payments.crm_{JIRA_ISSUE}_{ENV}_{CI_JOB_STARTED_AT}'
+    PRODUCT: 'supports.crm'
+    ALLURE_RQL: 'cf["Epic"] in ["[SALE] Supports"] and not tag in ["not_automated","skip_for_dev"]'
+    ALLURE_LAUNCH_NAME: 'supports.crm_{JIRA_ISSUE}_{ENV}_{CI_JOB_STARTED_AT}'
   needs:
     - deploy-dev-k8s
   except:

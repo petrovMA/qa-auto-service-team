@@ -21,8 +21,8 @@ import ru.action_tech.qa.auto.api_models.supports.bush.v1.facade_a360_bush_updat
 import ru.action_tech.qa.auto.api_models.supports.bush.v1.facade_a360_bush_update.response.FacadeA360BushUpdateResponse
 import ru.action_tech.qa.auto.api_models.supports.bush.v1.facade_a360_bush_update_regular_customers.request.FacadeA360BushUpdateRegularCustomersRequest
 import ru.action_tech.qa.auto.api_models.supports.bush.v1.facade_a360_bush_update_regular_customers.response.FacadeA360BushUpdateRegularCustomersResponse
-import ru.action_tech.qa.auto.api_models.supports.bush.v1.facade_a360_bush_update_support_manager.request.FacadeA360BushUpdateSupportManagerRequest
-import ru.action_tech.qa.auto.api_models.supports.bush.v1.facade_a360_bush_update_support_manager.response.FacadeA360BushUpdateSupportManagerResponse
+import ru.action_tech.qa.auto.api_models.supports.bush.v1.facade_a360_bush_update_support_manager.FacadeA360BushUpdateSupportManagerRequest
+import ru.action_tech.qa.auto.api_models.supports.bush.v1.facade_a360_bush_update_support_manager.FacadeA360BushUpdateSupportManagerResponse
 import ru.action_tech.qa.auto.api_models.supports.stoplist.v1.stop_list_bind.StopListBindRequest
 import ru.action_tech.qa.auto.api_models.supports.stoplist.v1.stop_list_bind.StopListBindResponse
 import ru.action_tech.qa.auto.api_models.supports.stoplist.v1.stop_list_bind_new_customer.StopListBindNewCustomerRequest

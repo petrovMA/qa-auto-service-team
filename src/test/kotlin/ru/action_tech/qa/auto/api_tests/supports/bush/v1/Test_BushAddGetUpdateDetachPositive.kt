@@ -73,10 +73,7 @@ class Test_BushAddGetUpdateDetachPositive {
     fun test() {
         "Проверка support-status куста /api/v1/opportunity-a360_get-by-bush-action360-support-statuses '125 - ВЗ А360 На согласовании добавления'" {
             val requestSupportStatuses = opportunityA360GetByBushAction360SupportStatuses(
-                OpportunityA360GetByBushAction360SupportStatusesRequest(
-                    bushAction360Id = newBushId,
-                    supportStatuses = listOf(125)
-                )
+                OpportunityA360GetByBushAction360SupportStatusesRequest(newBushId, listOf(125))
             )
             val supportResponse = supportsCrmClient.send(requestSupportStatuses)
 
@@ -143,8 +140,9 @@ class Test_BushAddGetUpdateDetachPositive {
         }
 
         "Детач куста" {
-            val detachId =
-                supportsCrmClient.send(facadeA360BushDetach(FacadeA360BushDetachRequest(updatedBushId, systemUserId1))).id
+            val detachId = supportsCrmClient
+                .send(facadeA360BushDetach(FacadeA360BushDetachRequest(updatedBushId, systemUserId1))).id
+
             assertTrue(detachId?.matches(FieldData.PATTERN_FOR_ID) ?: false)
         }
     }

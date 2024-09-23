@@ -1,4 +1,4 @@
-package ru.action_tech.qa.auto.api_models.supports.bush.v1.facade_a360_bush_update_support_manager.request
+package ru.action_tech.qa.auto.api_models.supports.bush.v1.facade_a360_bush_update_support_manager
 
 data class FacadeA360BushUpdateSupportManagerRequest(
     val authorId: String?,

@@ -27,7 +27,7 @@ class Test_OpportunityA360GetByCustomerPositive {
     @AllureId("145904")
     fun test() {
         // параметр "accountId" -> "customers[].id" в А360, таб Потенциальные сделки
-        val response = supportsCrmClient.send(opportunityA360GetByCustomer("22310905-603f-454c-a0d4-91b15deffd94"))
+        val response = supportsCrmClient.send(opportunityA360GetByCustomer("2cf89cff-9e40-46e7-838c-7a68d58d3509"))
 
         "Проверка что ответ не пустой" { assertThat(response).isNotEmpty }
     }

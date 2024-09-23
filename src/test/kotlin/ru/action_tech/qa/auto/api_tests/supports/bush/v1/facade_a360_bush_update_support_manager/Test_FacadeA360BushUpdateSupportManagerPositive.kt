@@ -1,4 +1,4 @@
-package ru.action_tech.qa.auto.api_tests.supports.bush.v1.facade_a360_bush_update_support_manager.ok
+package ru.action_tech.qa.auto.api_tests.supports.bush.v1.facade_a360_bush_update_support_manager
 
 import io.qameta.allure.AllureId
 import io.qameta.allure.Feature
@@ -10,7 +10,7 @@ import ru.action_tech.qa.auto.api_models.Sale_Supports
 import ru.action_tech.qa.auto.api_models.supports.SupportsRequests.bushAction360Add
 import ru.action_tech.qa.auto.api_models.supports.SupportsRequests.facadeA360BushUpdateSupportManager
 import ru.action_tech.qa.auto.api_models.supports.bush.v1.bush_action360_add.request.BushAction360AddRequest
-import ru.action_tech.qa.auto.api_models.supports.bush.v1.facade_a360_bush_update_support_manager.request.FacadeA360BushUpdateSupportManagerRequest
+import ru.action_tech.qa.auto.api_models.supports.bush.v1.facade_a360_bush_update_support_manager.FacadeA360BushUpdateSupportManagerRequest
 import ru.action_tech.qa.auto.core.annotations.HistoryIssues
 import ru.action_tech.qa.auto.core.annotations.Requirements
 import ru.action_tech.qa.auto.core.invocation.invoke
@@ -29,7 +29,7 @@ class Test_FacadeA360BushUpdateSupportManagerPositive {
     @Requirements("REQCRM-783", "REQCRM-790")
     @DisplayName("/api/v1/bush-action360_add /api/v1/facade-a360-bush_update-support-manager -> 200 Ok: Метод создания и смены сопровождающего на сделках куста Актион 360")
     @AllureId("145891")
-    fun test_FacadeA360BushUpdateSupportManagerPositive() {
+    fun test() {
         val requestBushAction = bushAction360Add(
             BushAction360AddRequest(
                 authorId = userId,

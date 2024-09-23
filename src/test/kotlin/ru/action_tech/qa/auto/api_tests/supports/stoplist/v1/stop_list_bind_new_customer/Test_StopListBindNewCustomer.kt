@@ -37,38 +37,34 @@ class Test_StopListBindNewCustomer {
     @DisplayName("$stopListBindNewCustomer -> 200 OK: Закрепить нового не существующего клиента в стоп-лист")
     @AllureId("246989")
     fun test() {
-        customerTypes
-            .forEach { (name, data) ->
-                val (type, inn) = data
+        customerTypes.forEach { (name, data) ->
+            val (type, inn) = data
 
-                "Закрепление $name" {
-                    supportsCrmClient.send(
-                        SupportsRequests.stopListBindNewCustomer(
-                            StopListBindNewCustomerRequest(
-                                partnerId = TEST_PARTNER.id,
-                                name = getRandomString(10),
-                                inn = inn,
-                                kpp = getRandomNumberToString().substring(0, 9),
-                                customerType = type,
-                                phoneNumber = getRandomNumberToString(100000000, 200000000),
-                                email = "${getRandomString(10)}@test.test",
-                                middleName = getRandomString(10),
-                                firstName = getRandomString(10),
-                                lastName = getRandomString(10),
-                                extension = getRandomNumberToString(10000000, 20000000),
-                                comment = getRandomString(10),
-                                countryId = Country.UZ.id
-                            )
+            "Закрепление $name" {
+                supportsCrmClient.send(
+                    SupportsRequests.stopListBindNewCustomer(
+                        StopListBindNewCustomerRequest(
+                            partnerId = TEST_PARTNER.id,
+                            name = getRandomString(10),
+                            inn = inn,
+                            kpp = getRandomNumberToString().substring(0, 9),
+                            customerType = type,
+                            phoneNumber = getRandomNumberToString(100000000, 200000000),
+                            email = "${getRandomString(10)}@test.test",
+                            middleName = getRandomString(10),
+                            firstName = getRandomString(10),
+                            lastName = getRandomString(10),
+                            extension = getRandomNumberToString(10000000, 20000000),
+                            comment = getRandomString(10),
+                            countryId = Country.UZ.id
                         )
-                    ).apply {
-                        verifyCustomerIsBound(id)
-                    }
-                }
+                    )
+                ).apply { verifyCustomerIsBound(id) }
             }
+        }
     }
 
-    private fun verifyCustomerIsBound(id: String?) {
-        supportsCrmClient.send(PublicApiRequests.stopListsGetByPartnerId(TEST_PARTNER.id, token = tokenAutoActionushka))
-            .apply { "Запись с id $id не найдена в стоп листе".assertTrue(any { it.id.toString() == id }) }
-    }
+    private fun verifyCustomerIsBound(id: String?) = supportsCrmClient
+        .send(PublicApiRequests.stopListsGetByPartnerId(TEST_PARTNER.id, tokenAutoActionushka))
+        .apply { "Запись с id $id не найдена в стоп листе".assertTrue(any { it.id.toString() == id }) }
 }
