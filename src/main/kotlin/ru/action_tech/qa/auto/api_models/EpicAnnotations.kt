@@ -81,3 +81,7 @@ annotation class Sale_StopList
 @Epic("[SALE] Supports")
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION)
 annotation class Sale_Supports
+
+@Epic("[SALE] ShipmentService")
+@Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION)
+annotation class Sale_ShipmentService
