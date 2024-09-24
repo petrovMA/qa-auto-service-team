@@ -1,0 +1,33 @@
+package ru.action_tech.qa.auto.crm.api.arm_shipment.v1.sending_get_list_by_customer.response
+
+data class SendingGetListByCustomerResponse(
+    val activityNumber: String,
+    val address1: String,
+    val address2: String,
+    val address3: String,
+    val advanceNr: String,
+    val batchName: String,
+    val batchNr: String,
+    val contact: String,
+    val courierAddress: String,
+    val customerId: String,
+    val dateBatchClose: String,
+    val deliveryDate: String,
+    val deliveryNonNotesDate: String,
+    val docDate: String,
+    val fullAddress: String,
+    val invoiceNr: String,
+    val orderSending: String,
+    val packageFormat: String,
+    val path: String,
+    val product: String,
+    val registeredSendingNr: String,
+    val sendingCategory: String,
+    val sendingDeliveryResultId: Int,
+    val sendingId: String,
+    val sendingNr: String,
+    val sendingtype: String,
+    val shipping: String,
+    val status: String,
+    val verificationActName: String
+)
