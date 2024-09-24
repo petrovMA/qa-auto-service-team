@@ -94,6 +94,9 @@ object CheckBadRequests {
         }
     }
 
+    internal fun checkBR(apiClient: ApiClient, request: Request, vararg expected: BrokenRule) =
+        checkBR(apiClient, request, setOf(*expected))
+
     internal fun checkBR(apiClient: ApiClient, request: Request, expected: Set<BrokenRule>) {
         "Проверить массив кодов и сообщений об ошибке в ответе" {
             val deserializedResponse = apiClient.send(
