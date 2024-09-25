@@ -2,7 +2,7 @@ package ru.action_tech.qa.auto.api_models.arm_shipment
 
 import ru.action_tech.qa.auto.core.api.Model
 import ru.action_tech.qa.auto.core.api.TRequest
-import ru.action_tech.qa.auto.crm.api.arm_shipment.v1.sending_get_list_by_customer.response.SendingGetListByCustomerResponse
+import ru.action_tech.qa.auto.api_models.arm_shipment.v1.sending_get_list_by_customer.response.SendingGetListByCustomerResponse
 import ru.action_tech.qa.auto.utils.http.QueryParams
 
 

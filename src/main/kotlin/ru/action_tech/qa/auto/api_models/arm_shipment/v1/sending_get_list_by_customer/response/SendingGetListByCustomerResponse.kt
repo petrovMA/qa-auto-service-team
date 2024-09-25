@@ -1,4 +1,4 @@
-package ru.action_tech.qa.auto.crm.api.arm_shipment.v1.sending_get_list_by_customer.response
+package ru.action_tech.qa.auto.api_models.arm_shipment.v1.sending_get_list_by_customer.response
 
 data class SendingGetListByCustomerResponse(
     val activityNumber: String,
