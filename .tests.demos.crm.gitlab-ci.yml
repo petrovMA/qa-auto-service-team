@@ -1,0 +1,104 @@
+include:
+  - project: 'qa-auto/qa-auto-ci'
+    file: '.qa-auto.tests.gitlab-ci.yml'
+
+stages:
+  - test-dev
+  - test-rc
+  - test-prod
+
+.run_test_image:
+  tags:
+    - qa-erm-srm
+
+run_tests:
+  extends: .run_test_image
+  when: manual
+  allow_failure: true
+
+# джобы с названием 'qa_test_...' запускает робот
+qa_test_dev_sale:
+  extends: run_tests
+  stage: test-dev
+  when: on_success
+  allow_failure: true
+  variables:
+    AUTO_TEST_REPOSITORY: 'qa-auto/qa-auto-sale-team'
+    ENV: dev
+    PRODUCT: 'demos.crm'
+    ALLURE_RQL: 'cf["Epic"] in ["[SALE] Demos","[SALE] DemoService"] and not tag in ["not_automated","skip_for_dev"]'
+    ALLURE_LAUNCH_NAME: 'demos.crm_{JIRA_ISSUE}_{ENV}_{CI_JOB_STARTED_AT}'
+  needs:
+    - deploy-dev-k8s
+  except:
+    - master
+    - /^release/
+    - schedules
+
+test_rc_sale_frontend:
+  extends: run_tests
+  stage: test-rc
+  when: manual
+  allow_failure: true
+  variables:
+    AUTO_TEST_REPOSITORY: 'qa-auto/qa-auto-sale-team'
+    AUTO_TEST_RUNNER: erm-ssr-frontend.rc
+  needs:
+    - deploy-rc-k8s
+  except:
+    - master
+  only:
+    - /^release/
+
+test_rc_sale_backend:
+  extends: run_tests
+  stage: test-rc
+  when: manual
+  allow_failure: true
+  variables:
+    AUTO_TEST_REPOSITORY: 'qa-auto/qa-auto-sale-team'
+    AUTO_TEST_RUNNER: erm-ssr-backend.rc
+  needs:
+    - deploy-rc-k8s
+  except:
+    - master
+  only:
+    - /^release/
+
+test_prod_sale_frontend:
+  extends: run_tests
+  stage: test-prod
+  when: manual
+  allow_failure: true
+  variables:
+    AUTO_TEST_REPOSITORY: 'qa-auto/qa-auto-sale-team'
+    AUTO_TEST_RUNNER: erm-ssr-frontend.prod
+  needs:
+    - deploy-prod-k8s
+  except:
+    refs:
+      - schedules
+    variables:
+      - $IS_WIP_PROJECT == "1"
+  only:
+    - master
+    - /^release/
+
+test_prod_sale_backend:
+  extends: run_tests
+  stage: test-prod
+  when: manual
+  allow_failure: true
+  variables:
+    AUTO_TEST_REPOSITORY: 'qa-auto/qa-auto-sale-team'
+    AUTO_TEST_RUNNER: erm-ssr-backend.prod
+  needs:
+    - deploy-prod-k8s
+  except:
+    refs:
+      - schedules
+    variables:
+      - $IS_WIP_PROJECT == "1"
+  only:
+    - master
+    - /^release/
