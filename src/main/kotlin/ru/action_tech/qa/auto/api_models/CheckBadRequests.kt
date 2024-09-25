@@ -187,8 +187,8 @@ object CheckBadRequests {
 
     data class BrokenRuleWithDevMessage(
         val code: Int = 0,
-        val developerMessage: Any? = null,
-        val messages: List<String>
+        val messages: List<String>,
+        val developerMessage: Any? = null
     ) : Serializable {
         override fun toString(): String = serialize.strict.toJson()
     }
