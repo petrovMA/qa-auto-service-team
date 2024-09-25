@@ -14,10 +14,11 @@ import ru.action_tech.qa.auto.core.invocation.invoke
 import ru.action_tech.qa.auto.data.person
 import ru.action_tech.qa.auto.utils.demosCrmClient
 
+
 class Test_GetDemoAccessGetListByContacts {
 
-    val mainProductId = "3bc0ec52-be55-e711-bb08-78e3b502da44"
-    val authorId = "2df6b60a-0e5b-4380-85dd-d8879b6c195c"
+    private val mainProductId = "f36ee673-6be1-e311-9f4b-78e3b502da44"
+    private val authorId = "2df6b60a-0e5b-4380-85dd-d8879b6c195c"
 
     @Test
     @Requirements("REQCRM-1145")
