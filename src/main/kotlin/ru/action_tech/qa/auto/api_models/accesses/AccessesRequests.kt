@@ -3,6 +3,8 @@ package ru.action_tech.qa.auto.api_models.accesses
 import io.restassured.http.ContentType
 import ru.action_tech.qa.auto.api_models.accesses.license.v1.license_get_by_task_id.LicenseGetByTaskIdRequest
 import ru.action_tech.qa.auto.api_models.accesses.license.v1.license_get_by_task_id.LicenseGetByTaskIdResponse
+import ru.action_tech.qa.auto.api_models.accesses.storage.v1.access_cancel.AccessCancelRequest
+import ru.action_tech.qa.auto.api_models.accesses.storage.v1.access_cancel.AccessCancelResponse
 import ru.action_tech.qa.auto.api_models.accesses.storage.v1.storage_access_deactivate.StorageAccessDeactivateRequest
 import ru.action_tech.qa.auto.api_models.accesses.storage.v1.storage_access_deactivate.StorageAccessDeactivateResponse
 import ru.action_tech.qa.auto.core.api.Model
@@ -26,7 +28,6 @@ object AccessesRequests {
         send = { get(licenseGetByTaskId) }
     )
 
-
     fun storageAccessDeactivate(
         request: StorageAccessDeactivateRequest?,
         token: String? = accessRequestsToken,
@@ -41,4 +42,16 @@ object AccessesRequests {
         },
         send = { post(storageAccessDeactivate) }
     )
+
+    fun accessCancel(request: AccessCancelRequest, token: String? = accessRequestsToken, isNonNull: Boolean = true) =
+        TRequest(
+            desc = "Отмена доступа",
+            model = Model<AccessCancelResponse>(),
+            spec = {
+                token?.let { addHeader(Headers.AUTHORIZATION, "Bearer $it") }
+                setContentType(ContentType.JSON)
+                setBody(request, isNonNull)
+            },
+            send = { post(accessCancel) }
+        )
 }
