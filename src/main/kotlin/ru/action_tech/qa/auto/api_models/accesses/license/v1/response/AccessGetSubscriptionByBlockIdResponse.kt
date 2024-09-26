@@ -1,4 +1,6 @@
-package ru.action_tech.qa.auto.api_models.accesses.license.v1.access_get_subscription_by_block_id.response
+package ru.action_tech.qa.auto.api_models.accesses.license.v1.response
+
+import ru.action_tech.qa.auto.api_models.accesses.license.v1.access_get_subscription_by_block_id.response.BaseResponse
 
 data class AccessGetSubscriptionByBlockIdResponse(
     val accountId: String,
