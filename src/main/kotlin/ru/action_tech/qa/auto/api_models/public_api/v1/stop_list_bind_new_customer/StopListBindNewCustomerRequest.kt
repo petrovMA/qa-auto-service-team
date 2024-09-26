@@ -1,6 +1,6 @@
 package ru.action_tech.qa.auto.api_models.public_api.v1.stop_list_bind_new_customer
 
-data class StopListBindNewCustomerRequest(
+data class StopListBindNewCustomersRequests(
     val comment: String?,
     val customerType: Int?,
     val email: String?,

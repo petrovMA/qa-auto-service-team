@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL
 import ru.action_tech.qa.auto.core.utils.DateTimeUtils
 import ru.action_tech.qa.auto.core.utils.format
 import ru.action_tech.qa.auto.data.ContactPerson
-import ru.action_tech.qa.auto.data.Department
+import ru.action_tech.qa.auto.data.enums.Department
 import ru.action_tech.qa.auto.data.SCENARIO_ADVANCE
 import java.util.*
 

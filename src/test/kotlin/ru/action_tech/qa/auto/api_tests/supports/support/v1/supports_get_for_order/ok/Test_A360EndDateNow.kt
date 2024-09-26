@@ -14,9 +14,9 @@ import ru.action_tech.qa.auto.core.assertions.assertTrue
 import ru.action_tech.qa.auto.core.invocation.invoke
 import ru.action_tech.qa.auto.data.PRICE_LIST_A360_WITH_SUB
 import ru.action_tech.qa.auto.data.PRODUCT_A360_WITH_SUB
-import ru.action_tech.qa.auto.data.SupportStatus.SUPPORT_STATUS_121
-import ru.action_tech.qa.auto.data.SupportType.SUPPORT_TYPE_12
-import ru.action_tech.qa.auto.data.SupportType.SUPPORT_TYPE_13
+import ru.action_tech.qa.auto.data.enums.SupportStatus.SUPPORT_STATUS_121
+import ru.action_tech.qa.auto.data.enums.SupportType.SUPPORT_TYPE_12
+import ru.action_tech.qa.auto.data.enums.SupportType.SUPPORT_TYPE_13
 import ru.action_tech.qa.auto.data.TEST_21_02_3
 import ru.action_tech.qa.auto.data.TEST_PARTNER_SECOND_USER
 import ru.action_tech.qa.auto.helpers.api.ApiOrderHelper

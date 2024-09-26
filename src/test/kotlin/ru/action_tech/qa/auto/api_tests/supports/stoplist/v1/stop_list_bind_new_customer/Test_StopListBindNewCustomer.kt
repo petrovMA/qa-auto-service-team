@@ -9,7 +9,7 @@ import ru.action_tech.qa.auto.api_models.public_api.PublicApiRequests
 import ru.action_tech.qa.auto.api_models.supports.StopListBindNewCustomer
 import ru.action_tech.qa.auto.api_models.supports.SupportsRequests
 import ru.action_tech.qa.auto.api_models.supports.stopListBindNewCustomer
-import ru.action_tech.qa.auto.api_models.supports.stoplist.v1.stop_list_bind_new_customer.StopListBindNewCustomerRequest
+import ru.action_tech.qa.auto.api_models.supports.stoplist.v1.stop_list_bind_new_customer.StopListBindNewCustomersRequests
 import ru.action_tech.qa.auto.core.annotations.Requirements
 import ru.action_tech.qa.auto.core.assertions.assertTrue
 import ru.action_tech.qa.auto.core.invocation.invoke
@@ -43,7 +43,7 @@ class Test_StopListBindNewCustomer {
             "Закрепление $name" {
                 supportsCrmClient.send(
                     SupportsRequests.stopListBindNewCustomer(
-                        StopListBindNewCustomerRequest(
+                        StopListBindNewCustomersRequests(
                             partnerId = TEST_PARTNER.id,
                             name = getRandomString(10),
                             inn = inn,

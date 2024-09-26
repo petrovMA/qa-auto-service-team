@@ -15,9 +15,9 @@ import ru.action_tech.qa.auto.core.invocation.invoke
 import ru.action_tech.qa.auto.helpers.api.ApiOrderHelper
 import ru.action_tech.qa.auto.utils.auth.tokenFirstPartnerTestUser
 import ru.action_tech.qa.auto.data.PRICE_LIST_US
-import ru.action_tech.qa.auto.data.SupportStatus.SUPPORT_STATUS_71
-import ru.action_tech.qa.auto.data.SupportStatus.SUPPORT_STATUS_72
-import ru.action_tech.qa.auto.data.SupportType.SUPPORT_TYPE_7
+import ru.action_tech.qa.auto.data.enums.SupportStatus.SUPPORT_STATUS_71
+import ru.action_tech.qa.auto.data.enums.SupportStatus.SUPPORT_STATUS_72
+import ru.action_tech.qa.auto.data.enums.SupportType.SUPPORT_TYPE_7
 import ru.action_tech.qa.auto.data.TEST_DEALER_12345
 import ru.action_tech.qa.auto.data.TEST_PARTNER_BOT
 import ru.action_tech.qa.auto.helpers.api.ApiSupportsHelper

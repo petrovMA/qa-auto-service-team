@@ -13,6 +13,7 @@ import ru.action_tech.qa.auto.core.invocation.invoke
 import ru.action_tech.qa.auto.core.utils.DateTimeUtils
 import ru.action_tech.qa.auto.core.utils.format
 import ru.action_tech.qa.auto.data.*
+import ru.action_tech.qa.auto.data.enums.BankAccounts
 import ru.action_tech.qa.auto.utils.auth.tokenAutoActionushka
 import ru.action_tech.qa.auto.utils.ordersCrmClient
 import java.util.*

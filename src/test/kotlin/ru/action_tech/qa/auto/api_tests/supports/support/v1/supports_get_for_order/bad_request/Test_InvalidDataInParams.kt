@@ -13,7 +13,7 @@ import ru.action_tech.qa.auto.core.annotations.Requirements
 import ru.action_tech.qa.auto.core.invocation.invoke
 import ru.action_tech.qa.auto.data.CUSTOMER_WITH_SUBSCRIPTION
 import ru.action_tech.qa.auto.data.PRODUCT_E
-import ru.action_tech.qa.auto.data.SupportType
+import ru.action_tech.qa.auto.data.enums.SupportType
 import ru.action_tech.qa.auto.utils.supportsCrmClient
 
 class Test_InvalidDataInParams {

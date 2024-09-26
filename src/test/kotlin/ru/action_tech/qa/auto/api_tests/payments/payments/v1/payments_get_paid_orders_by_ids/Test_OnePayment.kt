@@ -16,7 +16,7 @@ import ru.action_tech.qa.auto.core.assertions.assertTrue
 import ru.action_tech.qa.auto.core.invocation.invoke
 import ru.action_tech.qa.auto.core.utils.DateTimeUtils.TODAY
 import ru.action_tech.qa.auto.helpers.api.ApiOrderHelper
-import ru.action_tech.qa.auto.data.Company
+import ru.action_tech.qa.auto.data.enums.Company
 import ru.action_tech.qa.auto.data.ContactPerson
 import ru.action_tech.qa.auto.helpers.api.ApiPaymentHelper.createPaymentForOrder
 import ru.action_tech.qa.auto.utils.dateOfFirstDayOfMonth

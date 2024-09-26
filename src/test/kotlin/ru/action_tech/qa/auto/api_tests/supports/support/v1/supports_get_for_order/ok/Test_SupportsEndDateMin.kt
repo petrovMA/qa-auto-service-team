@@ -19,8 +19,8 @@ import ru.action_tech.qa.auto.utils.ermBackendArmSellerClient
 import ru.action_tech.qa.auto.api_models.erm_backend.order.v1.order_get_license_preview.OrderGetLicensePreviewResponse
 import ru.action_tech.qa.auto.utils.auth.tokenFirstPartnerTestUser
 import ru.action_tech.qa.auto.data.PRICE_LIST_E
-import ru.action_tech.qa.auto.data.SupportStatus.SUPPORT_STATUS_44
-import ru.action_tech.qa.auto.data.SupportType.SUPPORT_TYPE_4
+import ru.action_tech.qa.auto.data.enums.SupportStatus.SUPPORT_STATUS_44
+import ru.action_tech.qa.auto.data.enums.SupportType.SUPPORT_TYPE_4
 import ru.action_tech.qa.auto.data.TEST_DEALER_12345_CHILD
 import ru.action_tech.qa.auto.data.TEST_PARTNER_FOR_SASHA
 import ru.action_tech.qa.auto.helpers.api.ApiAccessesHelper

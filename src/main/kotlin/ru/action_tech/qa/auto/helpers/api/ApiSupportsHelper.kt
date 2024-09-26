@@ -9,7 +9,7 @@ import ru.action_tech.qa.auto.api_models.supports.support.v1.support_opportunity
 import ru.action_tech.qa.auto.api_models.supports.support.v1.support_update.request.SupportUpdateRequest
 import ru.action_tech.qa.auto.core.assertions.assertFalse
 import ru.action_tech.qa.auto.core.invocation.invoke
-import ru.action_tech.qa.auto.data.SupportStatus
+import ru.action_tech.qa.auto.data.enums.SupportStatus
 import ru.action_tech.qa.auto.data.TEST_DEALER_12345
 import ru.action_tech.qa.auto.data.TEST_PARTNER_FIRST_USER
 import ru.action_tech.qa.auto.utils.supportsCrmClient

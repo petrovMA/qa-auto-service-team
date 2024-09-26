@@ -65,6 +65,8 @@ inline fun <reified T : Element> T.scrollToAndCheck(checkerInter: (T) -> Boolean
 fun String.getValueWithoutSymbolAndSpaces() = this.replace(Regex("""[^A-Za-z0-9*$]"""), "")
 
 fun getRandom(range: Int) = Random.nextInt(range)
+fun getRandom() = (5701..100000000).random()
+fun getPhoneNumber(): Long = (1000000000..9000000000).random()
 
 fun isAllElementsContainsText(element: Element, textToCheck: String) =
     element.all.none { !it.text.contains(textToCheck) }
