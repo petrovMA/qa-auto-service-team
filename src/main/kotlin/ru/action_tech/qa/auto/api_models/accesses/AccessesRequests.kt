@@ -23,7 +23,7 @@ import ru.action_tech.qa.auto.api_models.accesses.customer.v1.action360_welcome_
 import ru.action_tech.qa.auto.api_models.accesses.license.v1.access_change_master_user.AccessChangeMasterUserRequest
 import ru.action_tech.qa.auto.api_models.accesses.license.v1.access_get_by_ids.AccessGetByIdsResponse
 import ru.action_tech.qa.auto.api_models.accesses.license.v1.access_get_last_sum_by_customer.AccessGetLastSumByCustomerResponse
-import ru.action_tech.qa.auto.api_models.accesses.license.v1.access_get_subscription_by_block_id.response.AccessGetSubscriptionByBlockIdResponse
+import ru.action_tech.qa.auto.api_models.accesses.license.v1.response.AccessGetSubscriptionByBlockIdResponse
 import ru.action_tech.qa.auto.api_models.accesses.license.v1.accesses_get_previous_access_id.AccessesGetPreviousAccessIdResponse
 import ru.action_tech.qa.auto.api_models.accesses.license.v1.expensive_licenses_get_by_order_ids.ExpensiveLicensesGetByOrderIdsRequest
 import ru.action_tech.qa.auto.api_models.accesses.license.v1.expensive_licenses_get_by_order_ids.ExpensiveLicensesGetByOrderIdsResponse
@@ -57,7 +57,7 @@ import ru.action_tech.qa.auto.api_models.accesses.storage.v1.storage_access_add.
 import ru.action_tech.qa.auto.api_models.accesses.storage.v1.storage_access_add.StorageAccessAddResponse
 import ru.action_tech.qa.auto.api_models.accesses.storage.v1.storage_access_deactivate.StorageAccessDeactivateRequest
 import ru.action_tech.qa.auto.api_models.accesses.storage.v1.storage_access_deactivate.StorageAccessDeactivateResponse
-import ru.action_tech.qa.auto.api_models.accesses.storage.v1.storage_access_get_by_code.response.StorageAccessGetByCodeResponse
+import ru.action_tech.qa.auto.api_models.accesses.storage.v1.storage_access_get_by_code.StorageAccessGetByCodeResponse
 import ru.action_tech.qa.auto.api_models.accesses.storage.v1.storage_access_get_by_id.StorageAccessGetByIdResponse
 import ru.action_tech.qa.auto.api_models.erm_backend.license.v1.license_get_susbcribe_info.LicenseGetSubscribeInfoResponse
 import ru.action_tech.qa.auto.core.api.Model
