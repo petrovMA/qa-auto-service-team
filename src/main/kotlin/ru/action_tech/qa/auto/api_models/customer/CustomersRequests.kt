@@ -6,6 +6,7 @@ import ru.action_tech.qa.auto.api_models.customer.customer.v1.connect.ConnectOrg
 import ru.action_tech.qa.auto.api_models.customer.customer.v1.contacts.ContactsResponse
 import ru.action_tech.qa.auto.api_models.customer.customer.v1.create.CreateOrganizationRequest
 import ru.action_tech.qa.auto.api_models.customer.customer.v1.create.CreateOrganizationResponse
+import ru.action_tech.qa.auto.api_models.customer.customer.v1.customer_get_by_pin.CustomerGetByPinResponse
 import ru.action_tech.qa.auto.api_models.customer.customer.v1.info_get.InfoResponse
 import ru.action_tech.qa.auto.api_models.customer.qa.customers.customers_unhold_by_ids.CustomersUnholdByIdsRequest
 import ru.action_tech.qa.auto.core.api.Request
@@ -18,6 +19,9 @@ import ru.action_tech.qa.auto.api_models.customer.qa.customer_set_support_partne
 import ru.action_tech.qa.auto.api_models.customer.qa.customer_set_support_type.CustomerSetSupportTypeRequest
 import ru.action_tech.qa.auto.api_models.customer.customer.v1.info_bybitrix.InfoByBitrixRequest
 import ru.action_tech.qa.auto.api_models.customer.customer.v1.info_bybitrix.InfoBybitrixResponse
+import ru.action_tech.qa.auto.api_models.erm_backend.customer.v1.create_user.CreateUserRequest
+import ru.action_tech.qa.auto.api_models.erm_backend.customer.v1.create_user.CreateUserResponse
+import ru.action_tech.qa.auto.api_models.erm_backend.customer.v1.organization_info.OrganizationInfoResponse
 import ru.action_tech.qa.auto.utils.auth.tokenAutoActionushka
 import ru.action_tech.qa.auto.utils.auth.tokenQA
 import ru.action_tech.qa.auto.utils.http.Headers
@@ -160,5 +164,36 @@ object CustomersRequests {
             request?.let { setBody(it) }
         },
         send = { post("/api/v1/info/bybitrix") }
+    )
+
+    fun organizationInfo(customerId: String?, token: String? = tokenAutoActionushka) = TRequest(
+        model = Model<OrganizationInfoResponse>(),
+        desc = "Возврат информации о клиенте",
+        spec = {
+            addHeader(Headers.AUTHORIZATION, "Bearer $token")
+            addQueryParam(QueryParams.CUSTOMER_ID, customerId)
+        },
+        send = { get("/api/v1/info") }
+    )
+
+    fun createUser(request: CreateUserRequest, token: String? = tokenAutoActionushka) = TRequest(
+        model = Model<CreateUserResponse>(),
+        desc = "Создание физ.лица",
+        spec = {
+            addHeader(Headers.AUTHORIZATION, "Bearer $token")
+            setContentType(ContentType.JSON)
+            setBody(request)
+        },
+        send = { post("/api/v1/create") }
+    )
+
+    fun getCustomerGetByPin(pin: Any?, token: String? = tokenAutoActionushka) = TRequest(
+        model = Model<CustomerGetByPinResponse>(),
+        desc = "Возвращает информацию о клиенте по его PIN",
+        spec = {
+            token?.let { addHeader(Headers.AUTHORIZATION, "Bearer $it") }
+            pin?.let { addQueryParam(QueryParams.PIN, it) }
+        },
+        send = { get("/api/v1/customer_get-by-pin") }
     )
 }

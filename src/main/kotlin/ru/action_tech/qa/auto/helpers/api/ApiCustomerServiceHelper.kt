@@ -4,7 +4,7 @@ import ru.action_tech.qa.auto.api_models.customer.CustomersRequests
 import ru.action_tech.qa.auto.core.assertions.assertFalse
 import ru.action_tech.qa.auto.core.invocation.invoke
 import ru.action_tech.qa.auto.core.utils.waiting.Wait.untilTrue
-import ru.action_tech.qa.auto.data.Company
+import ru.action_tech.qa.auto.data.enums.Company
 import ru.action_tech.qa.auto.api_models.customer.customer.v1.connect.ConnectOrgAndClientRequest
 import ru.action_tech.qa.auto.api_models.customer.customer.v1.connection_delete_by_pin.ConnectionDeleteByPinRequest
 import ru.action_tech.qa.auto.api_models.customer.customer.v1.customers_support_info_get_by_ids.CustomersSupportInfoGetByIdsResponse

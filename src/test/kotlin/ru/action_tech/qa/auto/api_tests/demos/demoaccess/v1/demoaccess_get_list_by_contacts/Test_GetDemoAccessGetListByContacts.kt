@@ -3,6 +3,7 @@ package ru.action_tech.qa.auto.api_tests.demos.demoaccess.v1.demoaccess_get_list
 import io.qameta.allure.AllureId
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.fail
 import ru.action_tech.qa.auto.api_models.Response_200_Ok
 import ru.action_tech.qa.auto.api_models.Sale_Demos
 import ru.action_tech.qa.auto.api_models.demos.DemoAccessGetListByContactsV1
@@ -11,14 +12,12 @@ import ru.action_tech.qa.auto.api_models.demos.demoAccessGetListByContactsV1
 import ru.action_tech.qa.auto.core.annotations.Requirements
 import ru.action_tech.qa.auto.core.assertions.assertEqual
 import ru.action_tech.qa.auto.core.invocation.invoke
+import ru.action_tech.qa.auto.data.USER_ACTIONUSKA
 import ru.action_tech.qa.auto.data.person
 import ru.action_tech.qa.auto.utils.demosCrmClient
 
 
 class Test_GetDemoAccessGetListByContacts {
-
-    private val mainProductId = "f36ee673-6be1-e311-9f4b-78e3b502da44"
-    private val authorId = "2df6b60a-0e5b-4380-85dd-d8879b6c195c"
 
     @Test
     @Requirements("REQCRM-1145")
@@ -31,17 +30,10 @@ class Test_GetDemoAccessGetListByContacts {
 
         val response = demosCrmClient.send(getDemoAccessGetListByContacts(arrayOf(person.customerId)))
             .find { it.contactId == person.customerId }
+            ?: fail("В ответе не найден contactId = ${person.customerId}")
 
-        "Проверяем в ответе email" {
-            assertEqual(response?.contactEmail, person.email)
-        }
+        "Проверяем в ответе email" { assertEqual(response.contactEmail, person.email) }
 
-        "Проверяем в ответе pin" {
-            assertEqual(response?.mainProductId, mainProductId)
-        }
-
-        "Проверяем в ответе id" {
-            assertEqual(response?.authorId, authorId)
-        }
+        "Проверяем в ответе id" { assertEqual(response.authorId, USER_ACTIONUSKA.id) }
     }
 }

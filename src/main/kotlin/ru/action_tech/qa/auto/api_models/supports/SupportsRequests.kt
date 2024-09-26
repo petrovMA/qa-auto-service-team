@@ -25,7 +25,7 @@ import ru.action_tech.qa.auto.api_models.supports.bush.v1.facade_a360_bush_updat
 import ru.action_tech.qa.auto.api_models.supports.bush.v1.facade_a360_bush_update_support_manager.FacadeA360BushUpdateSupportManagerResponse
 import ru.action_tech.qa.auto.api_models.supports.stoplist.v1.stop_list_bind.StopListBindRequest
 import ru.action_tech.qa.auto.api_models.supports.stoplist.v1.stop_list_bind.StopListBindResponse
-import ru.action_tech.qa.auto.api_models.supports.stoplist.v1.stop_list_bind_new_customer.StopListBindNewCustomerRequest
+import ru.action_tech.qa.auto.api_models.supports.stoplist.v1.stop_list_bind_new_customer.StopListBindNewCustomersRequests
 import ru.action_tech.qa.auto.api_models.supports.stoplist.v1.stop_list_bind_new_customer.StopListBindNewCustomerResponse
 import ru.action_tech.qa.auto.api_models.supports.stoplist.v1.stop_lists_get_by_partnerid.response.StopListGetByPartnerIdResponse
 import ru.action_tech.qa.auto.api_models.supports.support.v1.analysis_bush_customers_count_get_by_customer_ids.AnalysisBushCustomersCountGetByCustomerIdsResponse
@@ -249,7 +249,7 @@ object SupportsRequests {
         send = { post(stopListBind) }
     )
 
-    fun stopListBindNewCustomer(request: StopListBindNewCustomerRequest? = null, token: String? = tokenActionushka) =
+    fun stopListBindNewCustomer(request: StopListBindNewCustomersRequests? = null, token: String? = tokenActionushka) =
         TRequest(
             desc = "Закрепить нового клиента в в стоп-лист",
             model = Model<StopListBindNewCustomerResponse>(),

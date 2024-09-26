@@ -17,4 +17,6 @@ object License {
 
     //код авторизации по продукту Актион 360 Коммерческая корпорация. Тариф Корпорация 100. 12 мес.
     const val AUTH_KOMERC_CORPORATION = "2227-4853-8075-5023-4483"
+    const val BLOCK_ACCESS_ID = "0DF11738-4111-4207-9B72-3DC937FCB4DE"
+    const val BLOCK_ACCESS_ID_WITHOUT_SUBSCRIPTION = "79de8461-0789-4150-86e6-bb40a53bbe78"
 }

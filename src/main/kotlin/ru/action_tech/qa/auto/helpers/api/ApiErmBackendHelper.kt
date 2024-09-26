@@ -6,7 +6,7 @@ import ru.action_tech.qa.auto.api_models.erm_backend.order.v1.order_get_license_
 import ru.action_tech.qa.auto.api_models.orders.OrdersRequests
 import ru.action_tech.qa.auto.api_models.erm_backend.order.v1.order_create.OrderCreateRequest
 import ru.action_tech.qa.auto.api_models.erm_backend.order.v1.order_create.OrderCreateResponse
-import ru.action_tech.qa.auto.data.BankAccounts
+import ru.action_tech.qa.auto.data.enums.BankAccounts
 import ru.action_tech.qa.auto.data.PRICE_LIST_SS
 import ru.action_tech.qa.auto.data.SCENARIO_ADVANCE
 import ru.action_tech.qa.auto.data.PRODUCT_SS

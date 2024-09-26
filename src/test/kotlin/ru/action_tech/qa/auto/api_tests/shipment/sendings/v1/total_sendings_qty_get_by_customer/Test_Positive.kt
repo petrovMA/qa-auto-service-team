@@ -10,7 +10,7 @@ import ru.action_tech.qa.auto.api_models.shipment.TotalSendingsQtyGetByCustomerI
 import ru.action_tech.qa.auto.api_models.shipment.totalSendingsQtyGetByCustomerId
 import ru.action_tech.qa.auto.core.annotations.Requirements
 import ru.action_tech.qa.auto.core.assertions.assertTrue
-import ru.action_tech.qa.auto.data.Company
+import ru.action_tech.qa.auto.data.enums.Company
 import ru.action_tech.qa.auto.data.FieldData
 import ru.action_tech.qa.auto.utils.shipmentCrmClient
 

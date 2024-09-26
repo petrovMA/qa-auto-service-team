@@ -9,7 +9,7 @@ import ru.action_tech.qa.auto.api_models.CheckBadRequests.BrokenRule
 import ru.action_tech.qa.auto.api_models.supports.StopListBindNewCustomer
 import ru.action_tech.qa.auto.api_models.supports.SupportsRequests
 import ru.action_tech.qa.auto.api_models.supports.stopListBindNewCustomer
-import ru.action_tech.qa.auto.api_models.supports.stoplist.v1.stop_list_bind_new_customer.StopListBindNewCustomerRequest
+import ru.action_tech.qa.auto.api_models.supports.stoplist.v1.stop_list_bind_new_customer.StopListBindNewCustomersRequests
 import ru.action_tech.qa.auto.api_models.CheckBadRequests.testBRUnauthorized
 import ru.action_tech.qa.auto.core.annotations.Requirements
 import ru.action_tech.qa.auto.core.invocation.invoke
@@ -29,7 +29,7 @@ class Test_StopListBindNewCustomerNegativeScenario {
                 checkBR(
                     apiClient = supportsCrmClient,
                     request = SupportsRequests.stopListBindNewCustomer(
-                        StopListBindNewCustomerRequest(
+                        StopListBindNewCustomersRequests(
                             partnerId = DEFAULT_ID,
                             name = "test",
                             inn = "1667006447",
@@ -56,7 +56,7 @@ class Test_StopListBindNewCustomerNegativeScenario {
                 checkBR(
                     apiClient = supportsCrmClient,
                     request = SupportsRequests.stopListBindNewCustomer(
-                        StopListBindNewCustomerRequest(
+                        StopListBindNewCustomersRequests(
                             partnerId = DEFAULT_ID,
                             name = "test",
                             inn = "12356",
@@ -84,7 +84,7 @@ class Test_StopListBindNewCustomerNegativeScenario {
                 checkBR(
                     apiClient = supportsCrmClient,
                     request = SupportsRequests.stopListBindNewCustomer(
-                        StopListBindNewCustomerRequest(
+                        StopListBindNewCustomersRequests(
                             partnerId = null,
                             name = "test",
                             inn = "1667006447",
@@ -106,7 +106,7 @@ class Test_StopListBindNewCustomerNegativeScenario {
                 checkBR(
                     apiClient = supportsCrmClient,
                     request = SupportsRequests.stopListBindNewCustomer(
-                        StopListBindNewCustomerRequest(
+                        StopListBindNewCustomersRequests(
                             partnerId = DEFAULT_ID,
                             name = "test",
                             inn = "QWE",
@@ -133,7 +133,7 @@ class Test_StopListBindNewCustomerNegativeScenario {
                 checkBR(
                     apiClient = supportsCrmClient,
                     request = SupportsRequests.stopListBindNewCustomer(
-                        StopListBindNewCustomerRequest(
+                        StopListBindNewCustomersRequests(
                             partnerId = DEFAULT_ID,
                             name = "test",
                             inn = "5404514917",

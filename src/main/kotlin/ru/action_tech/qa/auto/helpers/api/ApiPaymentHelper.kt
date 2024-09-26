@@ -4,8 +4,8 @@ import ru.action_tech.qa.auto.api_models.payments.PaymentsRequests
 import ru.action_tech.qa.auto.api_models.payments.qa.v1.payment_create.QaPaymentCreateRequest
 import ru.action_tech.qa.auto.api_models.payments.qa.v1.payment_create.QaPaymentCreateRequest.RegMoney
 import ru.action_tech.qa.auto.api_models.payments.qa.v1.payment_create.QaPaymentInstallmentCreateRequest
-import ru.action_tech.qa.auto.data.BankAccounts
-import ru.action_tech.qa.auto.data.Company
+import ru.action_tech.qa.auto.data.enums.BankAccounts
+import ru.action_tech.qa.auto.data.enums.Company
 import ru.action_tech.qa.auto.utils.paymentsCrmClient
 
 object ApiPaymentHelper {
